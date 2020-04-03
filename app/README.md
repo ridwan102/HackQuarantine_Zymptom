@@ -3,6 +3,7 @@
 ## Contents:
 
 1. [Developer Setup](#Developer-Setup)
+2. [Running Locally](#Running-Locally)
 
 ## Developer Setup
 
@@ -47,4 +48,12 @@ Install the Expo Client app on your mobile device [here](https://expo.io/tools)
 
 ```
 $ sudo npm install expo-cli --global
+```
+
+## Running Locally
+
+Make sure you are in the `/app/zymptoms/` folder before running the following command.
+
+```
+$ expo start
 ```
