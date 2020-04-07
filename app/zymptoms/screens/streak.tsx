@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
 
-export default function Streak ()  {
+export default function Streak ({navigation} : { navigation: any})  {
     return (
         <View style= { styles.container }>
             <View style={styles.textContainer}>
@@ -15,7 +15,8 @@ export default function Streak ()  {
                 <Text style={styles.streakText}>Day 3</Text>
             </View>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}>
+                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
+                onPress={() => navigation.push('KureCoins')}>
                     <Text style={styles.ButtonText}>Continue</Text>
                 </TouchableOpacity>
             </View>

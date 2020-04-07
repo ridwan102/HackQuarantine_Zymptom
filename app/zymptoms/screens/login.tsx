@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
 //Text Input Source: https://reactnative.dev/docs/textinput.html
 
-export default function Login ()  {
+export default function Login ({navigation} : { navigation: any})  {
   const [value, onChangeText] = React.useState('Placeholder');
     return (
         <View style= { styles.container }>
@@ -22,7 +22,8 @@ export default function Login ()  {
                 onChangeText={text => onChangeText(text)}
                 value={value}
               />
-              <TouchableOpacity style={styles.SignInButton} activeOpacity={0.5}>
+              <TouchableOpacity style={styles.SignInButton} activeOpacity={0.5}
+              onPress={() => navigation.push('Exit')}>
                   <Text style={styles.SignInText}> SIGN IN </Text>
               </TouchableOpacity>
               <TouchableOpacity activeOpacity={0.5}>

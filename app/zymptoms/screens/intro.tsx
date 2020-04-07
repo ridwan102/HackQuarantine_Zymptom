@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
 
-export default function Intro ()  {
+export default function Intro ({navigation} : { navigation: any})  {
     return (
         <View style= { styles.container }>
             <View style={styles.textContainer}>
@@ -14,7 +14,8 @@ export default function Intro ()  {
                 <Image source={require('../images/intro.png')}/>
             </View>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}>
+                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
+                onPress={() => navigation.push('Symptoms')}>
                     <Text style={styles.ButtonText}>Continue</Text>
                 </TouchableOpacity>
             </View>

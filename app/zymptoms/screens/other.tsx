@@ -2,22 +2,20 @@ import React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity, TextInput } from 'react-native';
 
 
-export default function Other ()  {
+export default function Other ({navigation} : { navigation: any})  {
     return (
         <View style= { styles.container }>
             <View style={styles.textContainer}>
                 <Text style={styles.text}>Do you have any other </Text>
-                <Text style={styles.text}>issues? If not, press skip.</Text>
+                <Text style={styles.text}>issues? If not, press continue</Text>
             </View>
             <View style={styles.TextInputContainer}>
                 <TextInput style={styles.textInput}> Type Here </TextInput>
             </View>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}>
+                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
+                onPress={() => navigation.push('HealthConditions')}>
                     <Text style={styles.ButtonText}>Continue</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}>
-                    <Text style={styles.ButtonText}>Skip</Text>
                 </TouchableOpacity>
             </View>
         </View>

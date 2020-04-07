@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
 
-export default function Severity ()  {
+export default function Severity ({navigation} : { navigation: any})  {
     return (
         <View style= { styles.container }>
             <View style={styles.textContainer}>
@@ -27,7 +27,8 @@ export default function Severity ()  {
                 </TouchableOpacity>
             </View>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}>
+                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
+                onPress={() => navigation.push('Other')}>
                     <Text style={styles.ButtonText}>Continue</Text>
                 </TouchableOpacity>
             </View>

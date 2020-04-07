@@ -1,8 +1,12 @@
 import React from 'react';
-import { StyleSheet, View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TextInput, Image, TouchableOpacity, Button } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Intro from './intro';
+
 //Text Input: https://reactnative.dev/docs/textinput.html
 
-export default function SignUp ()  {
+export default function SignUp ({navigation} : { navigation: any})  {
   const [value, onChangeText] = React.useState('Placeholder');
   return (
     <View style= { styles.container }>
@@ -26,7 +30,8 @@ export default function SignUp ()  {
             onChangeText={text => onChangeText(text)}
             value={value}
             />
-            <TouchableOpacity style={styles.SignInButton} activeOpacity={0.5}>
+            <TouchableOpacity style={styles.SignInButton} activeOpacity={0.5}
+            onPress={() => navigation.push('Intro')}>
                 <Text style={styles.SignInText}> SIGN UP </Text>
             </TouchableOpacity>
         </View>
@@ -42,6 +47,18 @@ export default function SignUp ()  {
     </View>
     );
 };
+
+// const Stack = createStackNavigator();
+
+// export function App() {
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator initialRouteName="signUp">
+//         <Stack.Screen name="Intro" component={Intro} />
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   );
+// }
 
 const styles = StyleSheet.create({
     container : {

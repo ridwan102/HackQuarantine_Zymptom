@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
 
-export default function DashBoardEx ()  {
+export default function DashBoardEx ({navigation} : { navigation: any})  {
     return (
         <View style= { styles.container }>
             <View style={styles.textContainer}>
@@ -15,7 +15,8 @@ export default function DashBoardEx ()  {
                 <Text style={styles.dashboardText}>Rewards</Text>
             </View>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}>
+                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
+                onPress={() => navigation.push('Exit')}>
                     <Text style={styles.ButtonText}>Continue</Text>
                 </TouchableOpacity>
             </View>

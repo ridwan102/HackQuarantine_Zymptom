@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
 
-export default function KureCoins ()  {
+export default function KureCoins ({navigation} : { navigation: any})  {
     return (
         <View style= { styles.container }>
             <View style={styles.titleContainer}>
@@ -23,7 +23,8 @@ export default function KureCoins ()  {
                 <Image style={styles.rewardsImage} source={require('../images/itunes.png')}/>
             </View>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}>
+                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
+                onPress={() => navigation.push('DashBoardEx')}>
                     <Text style={styles.ButtonText}>Continue</Text>
                 </TouchableOpacity>
             </View>

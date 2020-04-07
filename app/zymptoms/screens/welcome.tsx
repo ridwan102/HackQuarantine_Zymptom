@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
-export default function Welcome ()  { 
+export default function Welcome ({navigation} : { navigation: any})  { 
     return (
         <View style= { styles.container }>
             <View style={styles.content}>
@@ -11,10 +11,12 @@ export default function Welcome ()  {
                 <Text style={styles.text}>Get rewards for helping combat COVID-19</Text>
             </View>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}>
+                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
+                onPress={() => navigation.push('Login')}>
                     <Text style={styles.ButtonText}> Login Now </Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}>
+                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
+                onPress={() => navigation.push('SignUp')}>
                     <Text style={styles.ButtonText}> Create Account </Text>
                 </TouchableOpacity>
             </View>
