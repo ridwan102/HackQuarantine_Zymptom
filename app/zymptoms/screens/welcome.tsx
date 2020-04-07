@@ -1,8 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
-
-export default function Welcome ()  {
+export default function Welcome ()  { 
     return (
         <View style= { styles.container }>
             <View style={styles.content}>
@@ -13,10 +12,10 @@ export default function Welcome ()  {
             </View>
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity style={styles.Button} activeOpacity={0.5}>
-                    <Text style={styles.ButtonText}> LOGIN NOW </Text>
+                    <Text style={styles.ButtonText}> Login Now </Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.Button} activeOpacity={0.5}>
-                    <Text style={styles.ButtonText}> CREATE ACCOUNT </Text>
+                    <Text style={styles.ButtonText}> Create Account </Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.leftDesign}>
@@ -43,7 +42,8 @@ const styles = StyleSheet.create({
     text: {
         color: '#FFFFFF',
         marginTop: -20,
-        fontSize: 15
+        fontSize: 15,
+        fontFamily: 'poppins-regular',
       },
       buttonsContainer: {
           flex: 1,
@@ -59,6 +59,9 @@ const styles = StyleSheet.create({
       },
       ButtonText: {
         color: '#000000',
+        fontFamily: 'poppins-semibold',
+        fontSize: 13
+        //Font.loadAsync
       },
       leftDesign:{
           flex: 1

@@ -7,9 +7,10 @@ export default function SignUp ()  {
   return (
     <View style= { styles.container }>
         <View style={styles.content}>
-            <Image 
+            <Text style={styles.LogoText}> Z </Text>
+            {/* <Image 
                 source={require('../images/zlogo.png')}
-            />
+            /> */}
             <Text style={styles.TitleText}>Zymtom</Text>
         </View>
         <View style={styles.buttonsContainer}>
@@ -55,10 +56,21 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       marginTop: 100
     },
+    LogoText: { 
+      backgroundColor: '#FFFFFF',  //#FF5F7A
+      height: 75,
+      width: 75,
+      borderRadius: 25,
+      color: '#FF3954',
+      fontSize: 50,
+      fontFamily: 'poppins-bold',
+      textAlign: 'center',
+    },
     TitleText: {
         color: '#FFFFFF',
         marginTop: 10,
-        fontSize: 20
+        fontSize: 20,
+        fontFamily: 'poppins-semibold',
       },
     buttonsContainer: {
       flex: 2,
@@ -83,18 +95,22 @@ const styles = StyleSheet.create({
       width: 300,
       borderRadius: 20,
       margin: 10,
+      marginTop: 20
     },
     SignInText: {
       color: '#FFFFFF',
+      fontFamily: 'poppins-medium',
+      fontSize: 14,
     },
     Link: {
       flex: 1,
-      marginTop: 10,
+      marginTop: -125,
       alignItems: 'center',
     },
     EndText: {
       color: '#FFFFFF',
       justifyContent: 'center',
-      marginTop: 25
+      marginTop: 125,
+      fontFamily: 'poppins-regular'
     },
 });

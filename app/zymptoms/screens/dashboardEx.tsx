@@ -1,23 +1,22 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity, TextInput } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
 
-export default function Other ()  {
+export default function DashBoardEx ()  {
     return (
         <View style= { styles.container }>
             <View style={styles.textContainer}>
-                <Text style={styles.text}>Do you have any other </Text>
-                <Text style={styles.text}>issues? If not, press skip.</Text>
+                <Text style={styles.text}>This is your main dashboard, where</Text>
+                <Text style={styles.text}>you will have access to everything!</Text>
             </View>
-            <View style={styles.TextInputContainer}>
-                <TextInput style={styles.textInput}> Type Here </TextInput>
+            <View style={styles.dashboardContainer}>
+                <Text style={styles.dashboardText}>Streak</Text>
+                <Text style={styles.dashboardText}>Map</Text>
+                <Text style={styles.dashboardText}>Rewards</Text>
             </View>
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity style={styles.Button} activeOpacity={0.5}>
                     <Text style={styles.ButtonText}>Continue</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}>
-                    <Text style={styles.ButtonText}>Skip</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -42,21 +41,26 @@ const styles = StyleSheet.create({
         fontFamily: 'poppins-regular',
         fontSize: 20,
       },
-    TextInputContainer: {
-        flex: 4,
-        marginTop: -5
+    dashboardContainer: {
+        flex: 3,
+        marginTop: -65,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
-    textInput: {
+    dashboardText: {
         backgroundColor: '#FFFFFF',
-        height: 400,
-        width: 350,
-        borderRadius: 50,
+        height: 110,
+        width: 300,
+        borderRadius: 25,
+        margin: 10,
+        color: '#AA9090',
+        fontSize: 20,
         textAlignVertical: 'center',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: 'poppins-regular',
     },
     buttonsContainer: {
         flex: 1,
-        marginTop: -300
     },
     Button: {
         alignItems: 'center',
@@ -69,7 +73,7 @@ const styles = StyleSheet.create({
     },
     ButtonText: {
         color: '#FFFFFF',
+        fontSize: 15,
         fontFamily: 'poppins-medium',
-        fontSize: 15
     },
 });

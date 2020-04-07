@@ -38,11 +38,13 @@ const styles = StyleSheet.create({
     titleText: {
         color: '#FFFFFF',
         fontSize: 25,
-        marginBottom: 25
+        marginBottom: 25,
+        fontFamily: 'poppins-regular',
     },
     text: {
         color: '#FFFFFF',
         fontSize: 15,
+        fontFamily: 'poppins-regular',
       },
     imageContainer: {
         flex: 2,
@@ -64,5 +66,7 @@ const styles = StyleSheet.create({
     },
     ButtonText: {
         color: '#FFFFFF',
+        fontFamily: 'poppins-medium',
+        fontSize: 15
     },
 });

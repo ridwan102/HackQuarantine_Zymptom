@@ -50,15 +50,17 @@ const styles = StyleSheet.create({
     },
     text: {
         color: '#FFFFFF',
+        fontFamily: 'poppins-regular',
         fontSize: 20,
       },
     severityContainer: {
         flex: 4,
         justifyContent: 'center',
+        marginTop: -30
     },
     symptomButton: {
         alignItems: 'center',
-        margin: 20,
+        margin: 10,
     },
     symptomText: {
         color: '#019CDD',
@@ -79,5 +81,7 @@ const styles = StyleSheet.create({
     },
     ButtonText: {
         color: '#FFFFFF',
+        fontFamily: 'poppins-medium',
+        fontSize: 15
     },
 });

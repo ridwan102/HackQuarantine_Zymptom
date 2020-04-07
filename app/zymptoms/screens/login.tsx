@@ -7,9 +7,10 @@ export default function Login ()  {
     return (
         <View style= { styles.container }>
             <View style={styles.content}>
-                <Image 
+                <Text style={styles.LogoText}> Z </Text>
+                {/* <Image 
                     source={require('../images/zlogo.png')}
-                />
+                /> */}
                 <Text style={styles.TitleText}>Zymtom</Text>
             </View>
             <View style={styles.buttonsContainer}>
@@ -54,10 +55,21 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       marginTop: 100
     },
+    LogoText: { 
+      backgroundColor: '#FFFFFF',  //#FF5F7A
+      height: 75,
+      width: 75,
+      borderRadius: 25,
+      color: '#FF3954',
+      fontSize: 50,
+      fontFamily: 'poppins-bold',
+      textAlign: 'center',
+    },
     TitleText: {
         color: '#FFFFFF',
         marginTop: 10,
-        fontSize: 20
+        fontSize: 20,
+        fontFamily: 'poppins-semibold',
       },
     buttonsContainer: {
       flex: 1,
@@ -81,22 +93,28 @@ const styles = StyleSheet.create({
       height: 40,
       width: 300,
       borderRadius: 20,
-      margin: 10,
+      margin: 10
     },
     SignInText: {
       color: '#FFFFFF',
+      fontFamily: 'poppins-medium',
+      fontSize: 14
     },
     ForgotPassText: {
       color: '#FFFFFF',
+      fontFamily: 'poppins-regular',
+      fontSize: 12,
+      marginTop: 15
     },
     Link: {
       flex: 1,
-      marginTop: 10,
-      alignItems: 'center',
+      marginTop: 25,
+      alignItems: 'center'
     },
     EndText: {
       color: '#FFFFFF',
       justifyContent: 'center',
-      marginTop: 100
+      marginTop: 125,
+      fontFamily: 'poppins-regular'
     },
 });

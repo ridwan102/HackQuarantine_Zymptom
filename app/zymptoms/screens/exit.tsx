@@ -1,23 +1,21 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity, TextInput } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
 
-export default function Other ()  {
+export default function Exit ()  {
     return (
         <View style= { styles.container }>
             <View style={styles.textContainer}>
-                <Text style={styles.text}>Do you have any other </Text>
-                <Text style={styles.text}>issues? If not, press skip.</Text>
+                <Text style={styles.text}>Now go and explore the app! We</Text>
+                <Text style={styles.text}>hope you will help to solve </Text>
+                <Text style={styles.text}>COVID-19!</Text>
             </View>
-            <View style={styles.TextInputContainer}>
-                <TextInput style={styles.textInput}> Type Here </TextInput>
+            <View style={styles.imageContainer}>
+                <Image source={require('../images/exit.png')}/>
             </View>
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity style={styles.Button} activeOpacity={0.5}>
                     <Text style={styles.ButtonText}>Continue</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}>
-                    <Text style={styles.ButtonText}>Skip</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -33,30 +31,23 @@ const styles = StyleSheet.create({
     },
     textContainer: {
         flex: 1,
-        marginTop: 50,
+        marginTop: 100,
         alignItems: 'center',
         justifyContent: 'center',
     },
     text: {
         color: '#FFFFFF',
-        fontFamily: 'poppins-regular',
         fontSize: 20,
+        fontFamily: 'poppins-regular',
       },
-    TextInputContainer: {
-        flex: 4,
-        marginTop: -5
-    },
-    textInput: {
-        backgroundColor: '#FFFFFF',
-        height: 400,
-        width: 350,
-        borderRadius: 50,
-        textAlignVertical: 'center',
-        textAlign: 'center'
+    imageContainer: {
+        flex: 2,
+        justifyContent: 'center',
+        marginLeft: 40,
+        marginTop: -50
     },
     buttonsContainer: {
         flex: 1,
-        marginTop: -300
     },
     Button: {
         alignItems: 'center',

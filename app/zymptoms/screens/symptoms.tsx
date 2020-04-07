@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     },
     text: {
         color: '#FFFFFF',
+        fontFamily: 'poppins-regular',
         fontSize: 15,
       },
     symptomContainer: {
@@ -64,8 +65,9 @@ const styles = StyleSheet.create({
     },
     symptomText: {
         color: '#019CDD',
-        fontSize: 20,
-        marginLeft: 30
+        fontSize: 19,
+        marginLeft: 30,
+        fontFamily: 'poppins-regular',
     },
     buttonsContainer: {
         flex: 1,
@@ -81,5 +83,7 @@ const styles = StyleSheet.create({
     },
     ButtonText: {
         color: '#FFFFFF',
+        fontSize: 15,
+        fontFamily: 'poppins-medium',
     },
 });
