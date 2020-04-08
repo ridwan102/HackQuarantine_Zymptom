@@ -18,6 +18,8 @@ import KureCoins from './screens/KureCoins';
 import DashboardEx from './screens/dashboardEx';
 import Exit from './screens/exit';
 import Dashboard from './screens/dashboard';
+import Streak from './screens/streak';
+import Map from './screens/map';
 import Wallet from './screens/wallet';
 import Offers from './screens/offers';
 
@@ -70,6 +72,8 @@ export default class App extends React.Component {
             <Stack.Screen name="DashboardEx" component={DashboardEx} />
             <Stack.Screen name="Exit" component={Exit} />
             <Stack.Screen name="Dashboard" component={Dashboard} />
+            <Stack.Screen name="Streak" component={Streak} />
+            <Stack.Screen name="Map" component={Map} />
             <Stack.Screen name="Wallet" component={Wallet} />
             <Stack.Screen name="Offers" component={Offers} />
           </Stack.Navigator>

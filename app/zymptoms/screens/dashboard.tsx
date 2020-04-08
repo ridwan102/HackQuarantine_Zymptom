@@ -9,11 +9,13 @@ export default function Dashboard ({navigation} : { navigation: any})  {
                 <Text style={styles.text}>Dashboard</Text>
             </View>
             <View style={styles.dashboardContainer}>
-                <TouchableOpacity style={styles.dashboardButton} activeOpacity={.5}>
+                <TouchableOpacity style={styles.dashboardButton} activeOpacity={.5}
+                    onPress={() => navigation.push('Streak')}>
                     <Text style={styles.dashboardText}>Streak</Text>
                     <Image source={require('../images/medal.png')}/>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.dashboardButton} activeOpacity={.5}>
+                <TouchableOpacity style={styles.dashboardButton} activeOpacity={.5}
+                    onPress={() => navigation.push('Map')}>
                     <Text style={styles.dashboardText}>Map</Text>
                     <Image source={require('../images/world.png')}/>
                 </TouchableOpacity>

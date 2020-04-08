@@ -10,17 +10,19 @@ export default function Offers ({navigation} : { navigation: any})  {
             </View>
             <View style={styles.offerContainer}>
                 <TouchableOpacity style={styles.offerButton} activeOpacity={.5}>
-                    <Text style={styles.offerPrice}>Free</Text>
+                    <Text style={styles.offerPrice1}>Free</Text>
                     <Image source={require('../images/spotify.png')}/>
                     <Text style={styles.offerText}>1 Month of Spotify Premium</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.offerButton} activeOpacity={.5}>
-                    <Text style={styles.offerPrice}>400</Text>
+                    <Image style={styles.coinXSmall} source={require('../images/coinXSmall.png')}/>
+                    <Text style={styles.offerPrice2}>400</Text>
                     <Image source={require('../images/google.png')}/>
                     <Text style={styles.offerText}>$10 Google Play Giftcard</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.offerButton} activeOpacity={.5}>
-                    <Text style={styles.offerPrice}>400</Text>
+                    <Image style={styles.coinXSmall} source={require('../images/coinXSmall.png')}/>
+                    <Text style={styles.offerPrice2}>400</Text>
                     <Image source={require('../images/amazon.png')}/>
                     <Text style={styles.offerText}>$10 Amazon Giftcard</Text>
                 </TouchableOpacity>
@@ -67,11 +69,22 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         margin: 15,
     },
-    offerPrice: {
+    coinXSmall: {
+        marginLeft: 160,
+        marginTop: 2.5
+    },
+    offerPrice1: {
         color: '#000000', 
         fontSize: 15,
         fontFamily: 'poppins-regular',
         marginRight: -225
+    },
+    offerPrice2: {
+        color: '#000000', 
+        fontSize: 15,
+        fontFamily: 'poppins-regular',
+        marginRight: -225,
+        marginTop: -30
     },
     offerText: {
         color: '#000000', 
