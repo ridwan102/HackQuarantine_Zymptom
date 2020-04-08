@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
 
-export default function DashBoardEx ({navigation} : { navigation: any})  {
+export default function DashboardEx ({navigation} : { navigation: any})  {
     return (
         <View style= { styles.container }>
             <View style={styles.textContainer}>
@@ -10,9 +10,18 @@ export default function DashBoardEx ({navigation} : { navigation: any})  {
                 <Text style={styles.text}>you will have access to everything!</Text>
             </View>
             <View style={styles.dashboardContainer}>
-                <Text style={styles.dashboardText}>Streak</Text>
-                <Text style={styles.dashboardText}>Map</Text>
-                <Text style={styles.dashboardText}>Rewards</Text>
+                <View style={styles.dashboardButton}>
+                    <Text style={styles.dashboardText}>Streak</Text>
+                    <Image source={require('../images/medal.png')}/>
+                </View>
+                <View style={styles.dashboardButton}>
+                    <Text style={styles.dashboardText}>Map</Text>
+                    <Image source={require('../images/world.png')}/>
+                </View>
+                <View style={styles.dashboardButton}>
+                    <Text style={styles.dashboardText}>Wallet</Text>
+                    <Image style={styles.imageCoin} source={require('../images/coinSmall.png')}/>
+                </View>
             </View>
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity style={styles.Button} activeOpacity={0.5}
@@ -44,21 +53,26 @@ const styles = StyleSheet.create({
       },
     dashboardContainer: {
         flex: 3,
-        marginTop: -65,
         justifyContent: 'center',
         alignItems: 'center',
     },
-    dashboardText: {
+    dashboardButton:{
+        justifyContent: 'space-around', 
+        alignItems:'center',
         backgroundColor: '#FFFFFF',
         height: 110,
         width: 300,
         borderRadius: 25,
-        margin: 10,
-        color: '#AA9090',
+        margin: 25,
+        flexDirection: 'row'
+    },
+    dashboardText: {
+        color: '#AA9090', 
         fontSize: 20,
-        textAlignVertical: 'center',
-        textAlign: 'center',
         fontFamily: 'poppins-regular',
+    },
+    imageCoin: {
+        marginRight: 15
     },
     buttonsContainer: {
         flex: 1,

@@ -24,7 +24,7 @@ export default function KureCoins ({navigation} : { navigation: any})  {
             </View>
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity style={styles.Button} activeOpacity={0.5}
-                onPress={() => navigation.push('DashBoardEx')}>
+                onPress={() => navigation.push('DashboardEx')}>
                     <Text style={styles.ButtonText}>Continue</Text>
                 </TouchableOpacity>
             </View>

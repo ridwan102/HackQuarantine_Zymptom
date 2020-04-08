@@ -7,58 +7,40 @@ import Intro from './intro';
 //Text Input: https://reactnative.dev/docs/textinput.html
 
 export default function SignUp ({navigation} : { navigation: any})  {
-  const [value, onChangeText] = React.useState('Placeholder');
   return (
     <View style= { styles.container }>
         <View style={styles.content}>
-            <Text style={styles.LogoText}> Z </Text>
-            {/* <Image 
-                source={require('../images/zlogo.png')}
-            /> */}
+          <View style={styles.logo}>
+            <Text style={styles.logoText}> Z </Text>
+          </View>
             <Text style={styles.TitleText}>Zymtom</Text>
         </View>
         <View style={styles.buttonsContainer}>
-            <TextInput style={styles.textInput}
-                onChangeText={text => onChangeText(text)}
-                value={value}
-            />
-            <TextInput style={styles.textInput}
-            onChangeText={text => onChangeText(text)}
-            value={value}
-            />
-            <TextInput style={styles.textInput}
-            onChangeText={text => onChangeText(text)}
-            value={value}
-            />
+          <TextInput style={styles.textInput}> Email </TextInput>
+          <TextInput style={styles.textInput}> Password </TextInput>
+          <TextInput style={styles.textInput}> Confirm Password </TextInput>
             <TouchableOpacity style={styles.SignInButton} activeOpacity={0.5}
             onPress={() => navigation.push('Intro')}>
                 <Text style={styles.SignInText}> SIGN UP </Text>
             </TouchableOpacity>
         </View>
-        <View style={styles.Link}>
-            <TouchableOpacity>
-            <Image
-            source={require('../images/links.png')}
-            //Image Style
-            />
+        <View style={styles.link}>
+              {/* Google, Twitter, and Facebook links below */}
+              {/* <TouchableOpacity>
+                <Image
+                source={require('../images/links.png')}
+                //Image Style
+                />
+              </TouchableOpacity> */}
+          <Text style={styles.endText}>Already have an account?</Text>
+            <TouchableOpacity activeOpacity={0.5}
+            onPress={() => navigation.push('Login')}>
+              <Text style={styles.endLink}>Sign In!</Text>
             </TouchableOpacity>
-            <Text style={styles.EndText}> Already have an account? Sign In</Text>
         </View>
     </View>
     );
 };
-
-// const Stack = createStackNavigator();
-
-// export function App() {
-//   return (
-//     <NavigationContainer>
-//       <Stack.Navigator initialRouteName="signUp">
-//         <Stack.Screen name="Intro" component={Intro} />
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   );
-// }
 
 const styles = StyleSheet.create({
     container : {
@@ -71,17 +53,20 @@ const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      marginTop: 100
+      marginTop: 145
     },
-    LogoText: { 
+    logo: {
       backgroundColor: '#FFFFFF',  //#FF5F7A
       height: 75,
       width: 75,
       borderRadius: 25,
+    },
+    logoText: { 
       color: '#FF3954',
       fontSize: 50,
       fontFamily: 'poppins-bold',
       textAlign: 'center',
+      marginTop: -3.5
     },
     TitleText: {
         color: '#FFFFFF',
@@ -119,15 +104,21 @@ const styles = StyleSheet.create({
       fontFamily: 'poppins-medium',
       fontSize: 14,
     },
-    Link: {
+    link: {
       flex: 1,
-      marginTop: -125,
+      marginTop: 25,
       alignItems: 'center',
+      flexDirection: 'row'
     },
-    EndText: {
+    endText: {
       color: '#FFFFFF',
       justifyContent: 'center',
-      marginTop: 125,
       fontFamily: 'poppins-regular'
+    },
+    endLink: {
+      color: '#FFFFFF',
+      justifyContent: 'center',
+      fontFamily: 'poppins-bold',
+      marginLeft: 3.5
     },
 });

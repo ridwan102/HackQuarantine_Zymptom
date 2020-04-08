@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
 //Text Input Source: https://reactnative.dev/docs/textinput.html
 
-export default function Login ({navigation} : { navigation: any})  {
+export default function Password ({navigation} : { navigation: any})  {
     return (
         <View style= { styles.container }>
             <View style={styles.content}>
@@ -11,31 +11,21 @@ export default function Login ({navigation} : { navigation: any})  {
               </View>
                 <Text style={styles.TitleText}>Zymtom</Text>
             </View>
+            <View style={styles.textContent}>
+                <Text style={styles.text}>Please enter your email. If you have an account,</Text>
+                <Text style={styles.text}>you will shortly receive an email</Text>
+            </View>
             <View style={styles.inputContainer}>
               <TextInput style={styles.textInput}> Email </TextInput>
-              <TextInput style={styles.textInput}> Password </TextInput>
-              <TouchableOpacity style={styles.SignInButton} activeOpacity={0.5}
-              onPress={() => navigation.push('Dashboard')}>
-                  <Text style={styles.SignInText}> SIGN IN </Text>
-              </TouchableOpacity>
-              <TouchableOpacity activeOpacity={0.5}
-              onPress={() => navigation.push('Password')}>
-                  <Text style={styles.ForgotPassText}> Forgot Password? </Text>
+              <TouchableOpacity style={styles.SignInButton} activeOpacity={0.5}>
+                  <Text style={styles.SignInText}> Reset Password </Text>
               </TouchableOpacity>
             </View>
             <View style={styles.link}>
-              {/* Google, Twitter, and Facebook links below */}
-              {/* <TouchableOpacity>
-                <Image
-                source={require('../images/links.png')}
-                //Image Style
-                />
-              </TouchableOpacity> */}
-
-                <Text style={styles.endText}>Don't have an account?</Text>
+                <Text style={styles.endText}>Return to</Text>
                 <TouchableOpacity activeOpacity={0.5}
-                onPress={() => navigation.push('SignUp')}>
-                  <Text style={styles.endLink}>Sign Up!</Text>
+                onPress={() => navigation.push('Welcome')}>
+                  <Text style={styles.endLink}>Welcome Screen</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -74,9 +64,20 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontFamily: 'poppins-semibold',
       },
+    textContent: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: -100
+      },
+    text: {
+        color: '#FFFFFF',
+        fontSize: 15,
+        fontFamily: 'poppins-regular',
+    },
     inputContainer: {
       flex: 1,
-      marginTop: -30,
+      marginTop: -75,
       alignItems: 'center',
     },
     textInput: {
@@ -121,9 +122,9 @@ const styles = StyleSheet.create({
       fontFamily: 'poppins-regular'
     },
     endLink: {
-      color: '#FFFFFF',
-      justifyContent: 'center',
-      fontFamily: 'poppins-bold',
-      marginLeft: 3.5
-    },
+        color: '#FFFFFF',
+        justifyContent: 'center',
+        fontFamily: 'poppins-bold',
+        marginLeft: 3.5
+      },
 });

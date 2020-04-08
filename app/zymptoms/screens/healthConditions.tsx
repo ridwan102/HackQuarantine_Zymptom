@@ -26,7 +26,7 @@ export default function HealthConditions ({navigation} : { navigation: any})  {
             </View>
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity style={styles.Button} activeOpacity={0.5}
-                onPress={() => navigation.push('Streak')}>
+                onPress={() => navigation.push('StreakEx')}>
                     <Text style={styles.ButtonText}>Continue</Text>
                 </TouchableOpacity>
             </View>
