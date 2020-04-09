@@ -5,19 +5,23 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
 import  Welcome  from './screens/welcome';
-import Login from './screens/login';
+import SignIn from './screens/signin';
 import SignUp from './screens/signup';
 import Password from './screens/password'
 import Intro from './screens/intro';
-import Symptoms from './screens/symptoms';
-import Severity from './screens/severity';
-import Other from './screens/other';
+import SymptomsDay1 from './screens/symptomsDay1';
+import SeverityDay1 from './screens/severityDay1';
+import OtherSymDay1 from './screens/otherSymDay1';
 import HealthConditions from './screens/healthConditions';
+import OtherHealth from './screens/otherHealth';
 import StreakEx from './screens/streakEx';
 import KureCoins from './screens/KureCoins';
 import DashboardEx from './screens/dashboardEx';
 import Exit from './screens/exit';
 import Dashboard from './screens/dashboard';
+import Symptoms from './screens/symptoms';
+import OtherSym from './screens/otherSym';
+import Severity from './screens/severity';
 import Streak from './screens/streak';
 import Map from './screens/map';
 import Wallet from './screens/wallet';
@@ -40,8 +44,9 @@ let customFonts = {
 
 const Stack = createStackNavigator();
 
+
 export default class App extends React.Component {
-  
+
   state = {
     fontsLoaded: false,
   };
@@ -61,19 +66,23 @@ export default class App extends React.Component {
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Welcome" screenOptions={{headerShown: false}}>
             <Stack.Screen name="Welcome" component={Welcome} />
-            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="SignIn" component={SignIn} />
             <Stack.Screen name="SignUp" component={SignUp} />
             <Stack.Screen name="Password" component={Password} />
             <Stack.Screen name="Intro" component={Intro} />
-            <Stack.Screen name="Symptoms" component={Symptoms} />
-            <Stack.Screen name="Severity" component={Severity} />
-            <Stack.Screen name="Other" component={Other} />
+            <Stack.Screen name="SymptomsDay1" component={SymptomsDay1} />
+            <Stack.Screen name="OtherSymDay1" component={OtherSymDay1} />
+            <Stack.Screen name="SeverityDay1" component={SeverityDay1} />
             <Stack.Screen name="HealthConditions" component={HealthConditions} />
+            <Stack.Screen name="OtherHealth" component={OtherHealth} />
             <Stack.Screen name="StreakEx" component={StreakEx} />
             <Stack.Screen name="KureCoins" component={KureCoins} />
             <Stack.Screen name="DashboardEx" component={DashboardEx} />
             <Stack.Screen name="Exit" component={Exit} />
             <Stack.Screen name="Dashboard" component={Dashboard} />
+            <Stack.Screen name="Symptoms" component={Symptoms} />
+            <Stack.Screen name="OtherSym" component={OtherSym} />
+            <Stack.Screen name="Severity" component={Severity} />
             <Stack.Screen name="Streak" component={Streak} />
             <Stack.Screen name="Map" component={Map} />
             <Stack.Screen name="Wallet" component={Wallet} />

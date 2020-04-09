@@ -1,27 +1,22 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity, Dimensions } from 'react-native';
 
 export default function Welcome ({navigation} : { navigation: any})  { 
     return (
         <View style= { styles.container }>
             <View style={styles.content}>
-                {/* <Image 
-                    source={require('../images/logo.png')}
-                /> */}
-                <View style={styles.content}>
                 <View style={styles.logo}>
                     <Text style={styles.logoText}> Z </Text>
             </View>
-                <Text style={styles.titleText}>Zymtom</Text>
-            </View>
+                <Text style={styles.titleText}>Zymptom</Text>
             </View>
             <View style={styles.textContainer}>
                 <Text style={styles.text}>Help combat illnesses in your area!</Text>
             </View>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity style={styles.button} activeOpacity={0.5}
-                onPress={() => navigation.push('Login')}>
-                    <Text style={styles.buttonText}> Login Now </Text>
+                onPress={() => navigation.push('SignIn')}>
+                    <Text style={styles.buttonText}>Login</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button} activeOpacity={0.5}
                 onPress={() => navigation.push('SignUp')}>
@@ -38,70 +33,69 @@ export default function Welcome ({navigation} : { navigation: any})  {
     );
 };
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
     container : {
-        flex: 1,
-        alignItems: 'center',
+        flex: height,
         justifyContent: 'center',
-        backgroundColor: '#FF3954'
+        backgroundColor: '#FF3954',
+        alignItems: 'center',
     },
     content: {
-        flex: 2,
+        flex: height/450,
         alignItems: 'center',
         justifyContent:'center',
-        marginTop: 70
+        marginTop: height/10
       },
-    buttonsContainer: {
-        flex: 1,
-    },
     logo: {
         backgroundColor: '#FFFFFF',  //#FF5F7A
-        height: 75,
-        width: 75,
-        borderRadius: 25,
+        height: height/12,
+        width: width/6,
+        borderRadius: height/40,
+        alignItems: 'center'
     },
     logoText: { 
         color: '#FF3954',
-        fontSize: 50,
+        fontSize: height/17,
         fontFamily: 'poppins-bold',
-        textAlign: 'center',
-        marginTop: -3.5
+        marginTop: -height/175
     },
     titleText: {
         color: '#FFFFFF',
-        marginTop: 10,
-        fontSize: 20,
+        marginTop: height/70,
+        fontSize: height/45,
         fontFamily: 'poppins-semibold',
     },
     textContainer: {
-        flex: 1,
-        marginTop: -30
+        flex: height/900,
+        marginTop: -height/20,
     },
     text: {
         color: '#FFFFFF',
-        marginTop: -20,
-        fontSize: 15,
+        marginTop: -height/40,
+        fontSize: height/55,
         fontFamily: 'poppins-regular',
     },
     buttonContainer: {
-        flex: 2,
-        marginTop: -140
+        flex: height/450,
+        marginTop: -height/6,
     },
     button: {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#019CDD',
-        height: 50,
-        width: 300,
-        borderRadius: 50,
-        margin: 10,
+        height: height/17.5,
+        width: width/1.4,
+        borderRadius: height/15,
+        margin: height/90,
     },
     buttonText: {
       color: '#FFFFFF',
       fontFamily: 'poppins-semibold',
-      fontSize: 15
+      fontSize: height/55
     },
     leftDesign:{
-        flex: 1
+        flex: height/900
     },
 });

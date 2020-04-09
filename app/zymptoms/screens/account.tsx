@@ -33,7 +33,7 @@ export default function Account ({navigation} : { navigation: any})  {
                     <Text style={styles.ButtonText}>Dashboard</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.Button} activeOpacity={0.5}
-                onPress={() => navigation.push('Login')}>
+                onPress={() => navigation.push('SignIn')}>
                     <Text style={styles.ButtonText}>Logout</Text>
                 </TouchableOpacity>
             </View>

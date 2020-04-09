@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
+import { Dimensions, StyleSheet, View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
 //Text Input Source: https://reactnative.dev/docs/textinput.html
 
 export default function Login ({navigation} : { navigation: any})  {
@@ -9,7 +9,7 @@ export default function Login ({navigation} : { navigation: any})  {
               <View style={styles.logo}>
                 <Text style={styles.logoText}> Z </Text>
               </View>
-                <Text style={styles.TitleText}>Zymtom</Text>
+                <Text style={styles.titleText}>Zymptom</Text>
             </View>
             <View style={styles.inputContainer}>
               <TextInput style={styles.textInput}> Email </TextInput>
@@ -42,76 +42,75 @@ export default function Login ({navigation} : { navigation: any})  {
     );
 };
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
     container : {
-        flex: 1,
+        flex: height,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#FF3954'
     },
     content: {
-      flex: 1,
+      flex: height/900,
       alignItems: 'center',
       justifyContent: 'center',
-      marginTop: 100
+      marginTop: height/9
     },
     logo: {
       backgroundColor: '#FFFFFF',  //#FF5F7A
-      height: 75,
-      width: 75,
-      borderRadius: 25,
+      height: height/12,
+      width: width/6,
+      borderRadius: height/40,
+      alignItems: 'center'
     },
     logoText: { 
       color: '#FF3954',
-      fontSize: 50,
+      fontSize: height/17,
       fontFamily: 'poppins-bold',
-      textAlign: 'center',
-      marginTop: -3.5
+      marginTop: -height/175
     },
-    TitleText: {
-        color: '#FFFFFF',
-        marginTop: 10,
-        fontSize: 20,
-        fontFamily: 'poppins-semibold',
+    titleText: {
+      color: '#FFFFFF',
+      marginTop: height/70,
+      fontSize: height/45,
+      fontFamily: 'poppins-semibold',
     },
     inputContainer: {
-      flex: 1,
-      marginTop: -30,
+      flex: height/900,
       alignItems: 'center',
     },
     textInput: {
-      alignItems: 'center',
-      justifyContent: 'center',
       backgroundColor: '#FFFFFF',
       color: '#ADADAD',
-      height: 50,
-      width: 300,
-      borderRadius: 50,
-      margin: 15,
+      height: height/17.5,
+      width: width/1.4,
+      borderRadius: height/15,
+      margin: height/90,
+      fontSize: height/55
     },
     SignInButton: {
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#019CDD',
-      height: 50,
-      width: 300,
-      borderRadius: 50,
-      margin: 10
+      height: height/17.5,
+      width: width/1.4,
+      borderRadius: height/15,
+      margin: height/90,
     },
     SignInText: {
       color: '#FFFFFF',
       fontFamily: 'poppins-medium',
-      fontSize: 15
+      fontSize: height/55,
     },
     ForgotPassText: {
       color: '#FFFFFF',
       fontFamily: 'poppins-regular',
-      fontSize: 14,
-      marginTop: 15
+      fontSize: height/55,
+      marginTop: height/60
     },
     link: {
-      flex: 1,
-      marginTop: 25,
+      flex: height/900,
       alignItems: 'center',
       flexDirection: 'row'
     },
@@ -119,13 +118,13 @@ const styles = StyleSheet.create({
       color: '#FFFFFF',
       justifyContent: 'center',
       fontFamily: 'poppins-regular',
-      fontSize: 14,
+      fontSize: height/55
     },
     endLink: {
       color: '#FFFFFF',
       justifyContent: 'center',
       fontFamily: 'poppins-bold',
-      marginLeft: 3.5,
-      fontSize: 14
+      marginLeft: width/100,
+      fontSize: height/55
     },
 });

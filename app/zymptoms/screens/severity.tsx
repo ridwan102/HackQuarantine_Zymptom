@@ -28,7 +28,7 @@ export default function Severity ({navigation} : { navigation: any})  {
             </View>
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity style={styles.Button} activeOpacity={0.5}
-                onPress={() => navigation.push('Other')}>
+                onPress={() => navigation.push('Symptoms')}>
                     <Text style={styles.ButtonText}>Continue</Text>
                 </TouchableOpacity>
             </View>

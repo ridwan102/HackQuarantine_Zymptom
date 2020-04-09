@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { Dimensions, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
 
-export default function Symptoms ({navigation} : { navigation: any})  {
+export default function SymptomsDay1 ({navigation} : { navigation: any})  {
     return (
         <View style= { styles.container }>
             <View style={styles.textContainer}>
@@ -10,84 +10,86 @@ export default function Symptoms ({navigation} : { navigation: any})  {
             </View>
             <View style={styles.symptomContainer}>
                 <TouchableOpacity style={styles.symptomButton} activeOpacity={0.5}
-                onPress={() => navigation.push('Severity')}>
+                onPress={() => navigation.push('SeverityDay1')}>
                     <Text style={styles.symptomText}>Cough</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.symptomButton} activeOpacity={0.5}
-                onPress={() => navigation.push('Severity')}>
+                onPress={() => navigation.push('SeverityDay1')}>
                     <Text style={styles.symptomText}>Fever</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.symptomButton} activeOpacity={0.5}
-                onPress={() => navigation.push('Severity')}>
+                onPress={() => navigation.push('SeverityDay1')}>
                     <Text style={styles.symptomText}>Tiredness</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.symptomButton} activeOpacity={0.5}
-                onPress={() => navigation.push('Severity')}>
+                onPress={() => navigation.push('SeverityDay1')}>
                     <Text style={styles.symptomText}>Difficulty Breathing</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
-                onPress={() => navigation.push('OtherSym')}>
-                    <Text style={styles.ButtonText}>Continue</Text>
+                <TouchableOpacity style={styles.button} activeOpacity={0.5}
+                onPress={() => navigation.push('OtherSymDay1')}>
+                    <Text style={styles.buttonText}>Continue</Text>
                 </TouchableOpacity>
             </View>
         </View>
     );
 };
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
     container : {
-        flex: 1,
+        flex: height,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#F67183'
     },
     textContainer: {
-        flex: 1,
-        marginTop: 50,
+        flex: height/900,
+        marginTop: height/14,
         alignItems: 'center',
         justifyContent: 'center',
     },
     text: {
         color: '#FFFFFF',
         fontFamily: 'poppins-regular',
-        fontSize: 20,
+        fontSize: height/45,
       },
     symptomContainer: {
-        flex: 3,
-        marginTop: -65,
+        flex: height/300,
+        marginTop: -height/12,
         justifyContent: 'center',
     },
     symptomButton: {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#FFFFFF',
-        height: 100,
-        width: 300,
-        borderRadius: 50,
-        margin: 10,
+        height: height/9,
+        width: width/1.4,
+        borderRadius: height/15,
+        margin: height/90,
     },
     symptomText: {
         color: '#019CDD',
-        fontSize: 20,
+        fontSize: height/45,
         fontFamily: 'poppins-regular',
     },
     buttonsContainer: {
-        flex: 1,
+        flex: height/900,
     },
-    Button: {
+    button: {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#019CDD',
-        height: 50,
-        width: 300,
-        borderRadius: 50,
-        margin: 10,
+        height: height/17.5,
+        width: width/1.4,
+        borderRadius: height/15,
+        margin: height/90,
     },
-    ButtonText: {
+    buttonText: {
         color: '#FFFFFF',
-        fontSize: 15,
+        fontSize: height/55,
         fontFamily: 'poppins-medium',
     },
 });

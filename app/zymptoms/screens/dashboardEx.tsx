@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     dashboardText: {
-        color: '#AA9090', 
+        color: '#000000', //'#AA9090'
         fontSize: 20,
         fontFamily: 'poppins-regular',
     },

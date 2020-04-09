@@ -17,13 +17,13 @@ export default function Offers ({navigation} : { navigation: any})  {
                 <TouchableOpacity style={styles.offerButton} activeOpacity={.5}>
                     <Image style={styles.coinXSmall} source={require('../images/coinXSmall.png')}/>
                     <Text style={styles.offerPrice2}>400</Text>
-                    <Image style={styles.image} source={require('../images/google.png')}/>
+                    <Image style={styles.image} source={require('../images/googleSmall.png')}/>
                     <Text style={styles.offerText}>$10 Google Play Giftcard</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.offerButton} activeOpacity={.5}>
                     <Image style={styles.coinXSmall} source={require('../images/coinXSmall.png')}/>
                     <Text style={styles.offerPrice2}>400</Text>
-                    <Image style={styles.image} source={require('../images/amazon.png')}/>
+                    <Image style={styles.image} source={require('../images/amazonSmall.png')}/>
                     <Text style={styles.offerText}>$10 Amazon Giftcard</Text>
                 </TouchableOpacity>
             </View>

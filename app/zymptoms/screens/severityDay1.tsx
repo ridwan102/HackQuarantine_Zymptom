@@ -2,27 +2,33 @@ import React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
 
-export default function HealthConditions ({navigation} : { navigation: any})  {
+export default function SeverityDay1 ({navigation} : { navigation: any})  {
     return (
         <View style= { styles.container }>
             <View style={styles.textContainer}>
-                <Text style={styles.text}>Any pre-existing health conditions?</Text>
-                <Text style={styles.text}>If not, press continue</Text>
+                <Text style={styles.text}>Choose a face to describe</Text>
+                <Text style={styles.text}>your severity</Text>
             </View>
-            <View style={styles.symptomContainer}>
+            <View style={styles.severityContainer}>
                 <TouchableOpacity style={styles.symptomButton} activeOpacity={0.5}>
-                    <Text style={styles.symptomText}>Asthma</Text>
+                    <Image source={require('../images/smile5.png')}/>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.symptomButton} activeOpacity={0.5}>
-                    <Text style={styles.symptomText}>Diabetes</Text>
+                    <Image source={require('../images/smile4.png')}/>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.symptomButton} activeOpacity={0.5}>
-                    <Text style={styles.symptomText}>Heart Disease</Text>
+                    <Image source={require('../images/smile3.png')}/>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.symptomButton} activeOpacity={0.5}>
+                    <Image source={require('../images/smile2.png')}/>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.symptomButton} activeOpacity={0.5}>
+                    <Image source={require('../images/smile1.png')}/>
                 </TouchableOpacity>
             </View>
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity style={styles.Button} activeOpacity={0.5}
-                onPress={() => navigation.push('OtherHealth')}>
+                onPress={() => navigation.push('SymptomsDay1')}>
                     <Text style={styles.ButtonText}>Continue</Text>
                 </TouchableOpacity>
             </View>
@@ -48,24 +54,19 @@ const styles = StyleSheet.create({
         fontFamily: 'poppins-regular',
         fontSize: 20,
       },
-    symptomContainer: {
-        flex: 3,
-        marginTop: -65,
+    severityContainer: {
+        flex: 4,
         justifyContent: 'center',
+        marginTop: -30
     },
     symptomButton: {
         alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#FFFFFF',
-        height: 100,
-        width: 300,
-        borderRadius: 50,
         margin: 10,
     },
     symptomText: {
         color: '#019CDD',
         fontSize: 20,
-        fontFamily: 'poppins-regular',
+        marginLeft: 30
     },
     buttonsContainer: {
         flex: 1,
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
     },
     ButtonText: {
         color: '#FFFFFF',
-        fontSize: 15,
         fontFamily: 'poppins-medium',
+        fontSize: 15
     },
 });
