@@ -6,9 +6,8 @@ export default function KureCoins ({navigation} : { navigation: any})  {
     return (
         <View style= { styles.container }>
             <View style={styles.titleContainer}>
-                <Text style={styles.text}>For every 7 continious days</Text>
-                <Text style={styles.text}>you put in your symptoms,</Text>
-                <Text style={styles.text}>you will earn Kure Coins!</Text>
+                <Text style={styles.text}>Everyday you put in your symptoms,</Text>
+                <Text style={styles.text}>will earn you Kure Coins</Text>
             </View>
             <View style={styles.coinContainer}>
                 <Image source={require('../images/coin.png')}/>
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#019CDD',
-        height: 65,
+        height: 50,
         width: 300,
         borderRadius: 50,
     },

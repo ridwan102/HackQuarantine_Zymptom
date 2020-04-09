@@ -7,7 +7,7 @@ export default function Severity ({navigation} : { navigation: any})  {
         <View style= { styles.container }>
             <View style={styles.textContainer}>
                 <Text style={styles.text}>Choose a face to describe</Text>
-                <Text style={styles.text}>your cough</Text>
+                <Text style={styles.text}>your severity</Text>
             </View>
             <View style={styles.severityContainer}>
                 <TouchableOpacity style={styles.symptomButton} activeOpacity={0.5}>
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#019CDD',
-        height: 65,
+        height: 50,
         width: 300,
         borderRadius: 50,
         margin: 10,

@@ -6,8 +6,8 @@ export default function HealthConditions ({navigation} : { navigation: any})  {
     return (
         <View style= { styles.container }>
             <View style={styles.textContainer}>
-                <Text style={styles.text}>Do you have any pre-existing</Text>
-                <Text style={styles.text}>health conditions? If not, press continue</Text>
+                <Text style={styles.text}>Any pre-existing health conditions?</Text>
+                <Text style={styles.text}>If not, press continue</Text>
             </View>
             <View style={styles.symptomContainer}>
                 <TouchableOpacity style={styles.symptomButton} activeOpacity={0.5}>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     text: {
         color: '#FFFFFF',
         fontFamily: 'poppins-regular',
-        fontSize: 15,
+        fontSize: 20,
       },
     symptomContainer: {
         flex: 3,
@@ -58,18 +58,17 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     symptomButton: {
-        alignItems: 'flex-start',
+        alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#FFFFFF',
         height: 100,
-        width: 350,
+        width: 300,
         borderRadius: 50,
         margin: 10,
     },
     symptomText: {
         color: '#019CDD',
-        fontSize: 19,
-        marginLeft: 30,
+        fontSize: 20,
         fontFamily: 'poppins-regular',
     },
     buttonsContainer: {
@@ -79,7 +78,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#019CDD',
-        height: 65,
+        height: 50,
         width: 300,
         borderRadius: 50,
         margin: 10,

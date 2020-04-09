@@ -17,8 +17,8 @@ export default function Password ({navigation} : { navigation: any})  {
             </View>
             <View style={styles.inputContainer}>
               <TextInput style={styles.textInput}> Email </TextInput>
-              <TouchableOpacity style={styles.SignInButton} activeOpacity={0.5}>
-                  <Text style={styles.SignInText}> Reset Password </Text>
+              <TouchableOpacity style={styles.buttonContainer} activeOpacity={0.5}>
+                  <Text style={styles.buttonText}> Reset Password </Text>
               </TouchableOpacity>
             </View>
             <View style={styles.link}>
@@ -85,21 +85,21 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       backgroundColor: '#FFFFFF',
       color: '#ADADAD',
-      height: 40,
+      height: 50,
       width: 300,
-      borderRadius: 20,
+      borderRadius: 50,
       margin: 15,
     },
-    SignInButton: {
+    buttonContainer: {
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#019CDD',
-      height: 40,
+      height: 50,
       width: 300,
-      borderRadius: 20,
+      borderRadius: 50,
       margin: 10
     },
-    SignInText: {
+    buttonText: {
       color: '#FFFFFF',
       fontFamily: 'poppins-medium',
       fontSize: 14
@@ -119,12 +119,14 @@ const styles = StyleSheet.create({
     endText: {
       color: '#FFFFFF',
       justifyContent: 'center',
-      fontFamily: 'poppins-regular'
+      fontFamily: 'poppins-regular',
+      fontSize: 14
     },
     endLink: {
         color: '#FFFFFF',
         justifyContent: 'center',
         fontFamily: 'poppins-bold',
-        marginLeft: 3.5
+        marginLeft: 3.5,
+        fontSize: 14
       },
 });

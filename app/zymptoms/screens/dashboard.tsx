@@ -25,9 +25,14 @@ export default function Dashboard ({navigation} : { navigation: any})  {
                     <Image style={styles.imageCoin} source={require('../images/coinSmall.png')}/>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.dashboardButton} activeOpacity={.5}
-                onPress={() => navigation.push('Exit')}>
+                onPress={() => navigation.push('Safety')}>
                     <Text style={styles.dashboardText}>Safety</Text>
                     <Image style={styles.imageCoin} source={require('../images/virus.png')}/>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.dashboardButton} activeOpacity={.5}
+                onPress={() => navigation.push('Account')}>
+                    <Text style={styles.dashboardText}>Account</Text>
+                    <Image style={styles.imageCoin} source={require('../images/account.png')}/>
                 </TouchableOpacity>
             </View>
         </View>
@@ -57,35 +62,18 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around', 
         alignItems:'center',
         backgroundColor: '#FFFFFF',
-        height: 110,
+        height: 100,
         width: 300,
-        borderRadius: 25,
-        margin: 25,
+        borderRadius: 50,
+        margin: 15,
         flexDirection: 'row'
     },
     dashboardText: {
-        color: '#AA9090', 
+        color: '#000000', //#AA9090
         fontSize: 20,
         fontFamily: 'poppins-regular',
     },
     imageCoin: {
         marginRight: 15
-    },
-    buttonsContainer: {
-        flex: 1,
-    },
-    Button: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#019CDD',
-        height: 65,
-        width: 300,
-        borderRadius: 50,
-        margin: 10,
-    },
-    ButtonText: {
-        color: '#FFFFFF',
-        fontFamily: 'poppins-medium',
-        fontSize: 15
     },
 });

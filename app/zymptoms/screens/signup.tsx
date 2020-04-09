@@ -21,7 +21,7 @@ export default function SignUp ({navigation} : { navigation: any})  {
           <TextInput style={styles.textInput}> Confirm Password </TextInput>
             <TouchableOpacity style={styles.SignInButton} activeOpacity={0.5}
             onPress={() => navigation.push('Intro')}>
-                <Text style={styles.SignInText}> SIGN UP </Text>
+                <Text style={styles.SignInText}> Sign Up </Text>
             </TouchableOpacity>
         </View>
         <View style={styles.link}>
@@ -84,25 +84,25 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       backgroundColor: '#FFFFFF',
       color: '#ADADAD',
-      height: 40,
+      height: 50,
       width: 300,
-      borderRadius: 20,
+      borderRadius: 50,
       margin: 15,
     },
     SignInButton: {
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#019CDD',
-      height: 40,
+      height: 50,
       width: 300,
-      borderRadius: 20,
+      borderRadius: 50,
       margin: 10,
       marginTop: 20
     },
     SignInText: {
       color: '#FFFFFF',
       fontFamily: 'poppins-medium',
-      fontSize: 14,
+      fontSize: 15,
     },
     link: {
       flex: 1,
@@ -113,12 +113,14 @@ const styles = StyleSheet.create({
     endText: {
       color: '#FFFFFF',
       justifyContent: 'center',
-      fontFamily: 'poppins-regular'
+      fontFamily: 'poppins-regular',
+      fontSize: 14
     },
     endLink: {
       color: '#FFFFFF',
       justifyContent: 'center',
       fontFamily: 'poppins-bold',
-      marginLeft: 3.5
+      marginLeft: 3.5,
+      fontSize: 14
     },
 });

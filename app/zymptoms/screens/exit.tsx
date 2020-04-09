@@ -7,8 +7,8 @@ export default function Exit ({navigation} : { navigation: any})  {
         <View style= { styles.container }>
             <View style={styles.textContainer}>
                 <Text style={styles.text}>Now go and explore the app! We</Text>
-                <Text style={styles.text}>hope you will help to solve </Text>
-                <Text style={styles.text}>COVID-19!</Text>
+                <Text style={styles.text}>hope you will help your community </Text>
+                <Text style={styles.text}>battle seasonal illnesses!</Text>
             </View>
             <View style={styles.imageContainer}>
                 <Image source={require('../images/exit.png')}/>
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#019CDD',
-        height: 65,
+        height: 50,
         width: 300,
         borderRadius: 50,
         margin: 10,

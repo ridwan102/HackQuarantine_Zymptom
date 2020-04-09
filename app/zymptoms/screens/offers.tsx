@@ -11,19 +11,19 @@ export default function Offers ({navigation} : { navigation: any})  {
             <View style={styles.offerContainer}>
                 <TouchableOpacity style={styles.offerButton} activeOpacity={.5}>
                     <Text style={styles.offerPrice1}>Free</Text>
-                    <Image source={require('../images/spotify.png')}/>
+                    <Image style={styles.image} source={require('../images/spotify.png')}/>
                     <Text style={styles.offerText}>1 Month of Spotify Premium</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.offerButton} activeOpacity={.5}>
                     <Image style={styles.coinXSmall} source={require('../images/coinXSmall.png')}/>
                     <Text style={styles.offerPrice2}>400</Text>
-                    <Image source={require('../images/google.png')}/>
+                    <Image style={styles.image} source={require('../images/google.png')}/>
                     <Text style={styles.offerText}>$10 Google Play Giftcard</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.offerButton} activeOpacity={.5}>
                     <Image style={styles.coinXSmall} source={require('../images/coinXSmall.png')}/>
                     <Text style={styles.offerPrice2}>400</Text>
-                    <Image source={require('../images/amazon.png')}/>
+                    <Image style={styles.image} source={require('../images/amazon.png')}/>
                     <Text style={styles.offerText}>$10 Amazon Giftcard</Text>
                 </TouchableOpacity>
             </View>
@@ -58,37 +58,41 @@ const styles = StyleSheet.create({
     offerContainer: {
         flex: 3,
         alignItems: 'center',
-        marginVertical: -75
+        marginVertical: -50
     },
     offerButton:{
         justifyContent: 'space-around', 
         alignItems:'center',
         backgroundColor: '#FFFFFF',
-        height: 150,
+        height: 100,
         width: 300,
-        borderRadius: 25,
-        margin: 15,
+        borderRadius: 50,
+        margin: 30,
     },
     coinXSmall: {
-        marginLeft: 160,
-        marginTop: 2.5
+        marginLeft: 130,
+        marginTop: 7.5
     },
     offerPrice1: {
         color: '#000000', 
         fontSize: 15,
         fontFamily: 'poppins-regular',
-        marginRight: -225
+        marginRight: -200,
+        marginTop: 5
     },
     offerPrice2: {
         color: '#000000', 
         fontSize: 15,
         fontFamily: 'poppins-regular',
-        marginRight: -225,
-        marginTop: -30
+        marginRight: -200,
+        marginTop: -32.5
+    },
+    image: {
+        marginTop: -35
     },
     offerText: {
         color: '#000000', 
-        fontSize: 17,
+        fontSize: 15,
         fontFamily: 'poppins-regular',
     },
     buttonsContainer: {
@@ -99,8 +103,8 @@ const styles = StyleSheet.create({
     },
     Button: {
         backgroundColor: '#019CDD',
-        height: 65,
-        width: 150,
+        height: 50,
+        width: 135,
         borderRadius: 50,
         alignItems: 'center',
         justifyContent: 'center',

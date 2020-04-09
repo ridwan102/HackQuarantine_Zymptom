@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     rewardsText: {
         color: '#FFFFFF',
         fontFamily: 'poppins-regular',
-        fontSize: 37,
+        fontSize: 35,
         marginLeft: 10
     },
     rewardsImage: {
@@ -73,13 +73,13 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around', 
         alignItems:'center',
         backgroundColor: '#FFFFFF',
-        height: 110,
+        height: 100,
         width: 300,
-        borderRadius: 25,
+        borderRadius: 50,
         flexDirection: 'row'
     },
     spendText: {
-        color: '#AA9090', 
+        color: '#000000', 
         fontSize: 20,
         fontFamily: 'poppins-regular',
     },
@@ -91,12 +91,12 @@ const styles = StyleSheet.create({
     entriesText1: {
         color: '#FFFFFF',
         fontFamily: 'poppins-regular',
-        fontSize: 37,
+        fontSize: 35,
     },
     entriesText2: {
         color: '#FFFFFF',
         fontFamily: 'poppins-regular',
-        fontSize: 18,
+        fontSize: 15,
     },
     buttonsContainer: {
         flex: 1,
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     },
     Button: {
         backgroundColor: '#019CDD',
-        height: 65,
+        height: 50,
         width: 300,
         borderRadius: 50,
         alignItems: 'center',

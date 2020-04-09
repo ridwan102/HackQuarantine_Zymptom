@@ -16,7 +16,7 @@ export default function Login ({navigation} : { navigation: any})  {
               <TextInput style={styles.textInput}> Password </TextInput>
               <TouchableOpacity style={styles.SignInButton} activeOpacity={0.5}
               onPress={() => navigation.push('Dashboard')}>
-                  <Text style={styles.SignInText}> SIGN IN </Text>
+                  <Text style={styles.SignInText}> Sign In</Text>
               </TouchableOpacity>
               <TouchableOpacity activeOpacity={0.5}
               onPress={() => navigation.push('Password')}>
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         fontSize: 20,
         fontFamily: 'poppins-semibold',
-      },
+    },
     inputContainer: {
       flex: 1,
       marginTop: -30,
@@ -84,29 +84,29 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       backgroundColor: '#FFFFFF',
       color: '#ADADAD',
-      height: 40,
+      height: 50,
       width: 300,
-      borderRadius: 20,
+      borderRadius: 50,
       margin: 15,
     },
     SignInButton: {
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#019CDD',
-      height: 40,
+      height: 50,
       width: 300,
-      borderRadius: 20,
+      borderRadius: 50,
       margin: 10
     },
     SignInText: {
       color: '#FFFFFF',
       fontFamily: 'poppins-medium',
-      fontSize: 14
+      fontSize: 15
     },
     ForgotPassText: {
       color: '#FFFFFF',
       fontFamily: 'poppins-regular',
-      fontSize: 12,
+      fontSize: 14,
       marginTop: 15
     },
     link: {
@@ -118,12 +118,14 @@ const styles = StyleSheet.create({
     endText: {
       color: '#FFFFFF',
       justifyContent: 'center',
-      fontFamily: 'poppins-regular'
+      fontFamily: 'poppins-regular',
+      fontSize: 14,
     },
     endLink: {
       color: '#FFFFFF',
       justifyContent: 'center',
       fontFamily: 'poppins-bold',
-      marginLeft: 3.5
+      marginLeft: 3.5,
+      fontSize: 14
     },
 });

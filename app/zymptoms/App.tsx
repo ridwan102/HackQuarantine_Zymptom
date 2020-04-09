@@ -21,6 +21,8 @@ import Dashboard from './screens/dashboard';
 import Streak from './screens/streak';
 import Map from './screens/map';
 import Wallet from './screens/wallet';
+import Safety from './screens/safety';
+import Account from './screens/account';
 import Offers from './screens/offers';
 
 //Button Source: https://aboutreact.com/image-icon-inside-the-react-native-button/
@@ -76,6 +78,8 @@ export default class App extends React.Component {
             <Stack.Screen name="Map" component={Map} />
             <Stack.Screen name="Wallet" component={Wallet} />
             <Stack.Screen name="Offers" component={Offers} />
+            <Stack.Screen name="Account" component={Account} />
+            <Stack.Screen name="Safety" component={Safety} />
           </Stack.Navigator>
         </NavigationContainer>
       );

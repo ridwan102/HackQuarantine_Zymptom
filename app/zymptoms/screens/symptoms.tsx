@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     text: {
         color: '#FFFFFF',
         fontFamily: 'poppins-regular',
-        fontSize: 15,
+        fontSize: 20,
       },
     symptomContainer: {
         flex: 3,
@@ -56,18 +56,17 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     symptomButton: {
-        alignItems: 'flex-start',
+        alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#FFFFFF',
         height: 100,
-        width: 350,
+        width: 300,
         borderRadius: 50,
         margin: 10,
     },
     symptomText: {
         color: '#019CDD',
-        fontSize: 19,
-        marginLeft: 30,
+        fontSize: 20,
         fontFamily: 'poppins-regular',
     },
     buttonsContainer: {
@@ -77,7 +76,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#019CDD',
-        height: 65,
+        height: 50,
         width: 300,
         borderRadius: 50,
         margin: 10,
