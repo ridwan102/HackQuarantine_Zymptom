@@ -1,6 +1,6 @@
 import React from 'react';
 import MapView from 'react-native-maps';
-import { Dimensions, StyleSheet, View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
+import { Dimensions, StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
 
 
 export default function Map ({navigation} : { navigation: any})  {
@@ -36,10 +36,9 @@ const styles = StyleSheet.create({
     container : {
         flex: height,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
     },
-    mapContainer: { 
-        flex: height,       
+    mapContainer: {      
         position: 'absolute',
         justifyContent: 'center',
         alignItems: 'center',
