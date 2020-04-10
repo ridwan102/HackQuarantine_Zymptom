@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
+import MapView from 'react-native-maps';
+import { StyleSheet, Dimensions, View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
 
 
 export default function Map ({navigation} : { navigation: any})  {
@@ -9,7 +10,15 @@ export default function Map ({navigation} : { navigation: any})  {
                 <TextInput style={styles.textInput}> Search here </TextInput>
             </View>
             <View style={styles.mapContainer}>
-                <Image source={require('../images/map.png')}/>
+                <MapView
+                    style={styles.mapStyle}
+                    initialRegion={{
+                        latitude: 40.7128,
+                        longitude: -74.0060,
+                        latitudeDelta: .5,
+                        longitudeDelta: .5, 
+                    }}
+                 />
             </View>
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity style={styles.Button} activeOpacity={0.5}
@@ -25,15 +34,23 @@ const styles = StyleSheet.create({
     container : {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
     },
-    mapContainer: {
-        flex: 3,
+    mapContainer: {        
+        position: 'absolute',
         justifyContent: 'center',
         alignItems: 'center',
+        zIndex: -1,
+    },
+    mapStyle: {
+        height: Dimensions.get('window').height,
+        width: Dimensions.get('window').width,
     },
     buttonsContainer: {
         flex: 1,
+        position: 'absolute',
+        bottom: 0,
+        
     },
     Button: {
         alignItems: 'center',
@@ -42,27 +59,25 @@ const styles = StyleSheet.create({
         height: 50,
         width: 300,
         borderRadius: 50,
-        margin: 10,
+        margin: 50,
     },
     ButtonText: {
+        
         color: '#FFFFFF',
         fontSize: 15,
         fontFamily: 'poppins-medium',
     },
     textContainer: {
         flex: 1,
-        marginTop: 50,
+        top: 50,
+        position: 'absolute',
         alignItems: 'center',
-        justifyContent: 'center',
     },
     textInput: {
-        alignItems: 'center',
-        justifyContent: 'center',
         backgroundColor: '#000000',
         color: '#ADADAD',
         height: 50,
         width: 300,
         borderRadius: 50,
-        margin: 10,
       },
 });
