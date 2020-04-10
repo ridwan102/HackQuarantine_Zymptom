@@ -5,9 +5,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
 import  Welcome  from './screens/welcome';
+import Explanation from './screens/explanation';
 import SignIn from './screens/signin';
 import SignUp from './screens/signup';
-import Password from './screens/password'
+import Password from './screens/password';
 import Intro from './screens/intro';
 import SymptomsDay1 from './screens/symptomsDay1';
 import SeverityDay1 from './screens/severityDay1';
@@ -66,6 +67,7 @@ export default class App extends React.Component {
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Welcome" screenOptions={{headerShown: false}}>
             <Stack.Screen name="Welcome" component={Welcome} />
+            <Stack.Screen name="Explanation" component={Explanation} />
             <Stack.Screen name="SignIn" component={SignIn} />
             <Stack.Screen name="SignUp" component={SignUp} />
             <Stack.Screen name="Password" component={Password} />

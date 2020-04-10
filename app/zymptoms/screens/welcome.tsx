@@ -19,7 +19,7 @@ export default function Welcome ({navigation} : { navigation: any})  {
                     <Text style={styles.buttonText}>Login</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button} activeOpacity={0.5}
-                onPress={() => navigation.push('SignUp')}>
+                onPress={() => navigation.push('Explanation')}>
                     <Text style={styles.buttonText}> Create Account </Text>
                 </TouchableOpacity>
             </View>

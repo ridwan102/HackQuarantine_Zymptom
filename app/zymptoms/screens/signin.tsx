@@ -38,7 +38,7 @@ export default function Login ({navigation} : { navigation: any})  {
 
                 <Text style={styles.endText}>Don't have an account?</Text>
                 <TouchableOpacity activeOpacity={0.5}
-                onPress={() => navigation.push('SignUp')}>
+                onPress={() => navigation.push('Explanation')}>
                   <Text style={styles.endLink}>Sign Up!</Text>
                 </TouchableOpacity>
             </View>
