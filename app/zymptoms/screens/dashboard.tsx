@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity, Dimensions } from 'react-native';
-
+import { StyleSheet, View, Text, TouchableOpacity, Dimensions } from 'react-native';
+import Image from 'react-native-scalable-image';
 
 export default function Dashboard ({navigation} : { navigation: any})  {
     return (
@@ -12,32 +12,32 @@ export default function Dashboard ({navigation} : { navigation: any})  {
                 <TouchableOpacity style={styles.dashboardButton} activeOpacity={.5}
                     onPress={() => navigation.push('Symptoms')}>
                     <Text style={styles.dashboardText}>Symptoms</Text>
-                    <Image style={styles.imageSymptom} source={require('../images/medal.png')}/>
+                    <Image width={width/6.5} style={styles.imageSymptom} source={require('../images/symptom1.png')}/>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.dashboardButton} activeOpacity={.5}
                     onPress={() => navigation.push('Streak')}>
                     <Text style={styles.dashboardText}>Streak</Text>
-                    <Image style={styles.imageMedal} source={require('../images/medal.png')}/>
+                    <Image width={width/6.5} style={styles.imageMedal} source={require('../images/medal.png')}/>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.dashboardButton} activeOpacity={.5}
                     onPress={() => navigation.push('Map')}>
                     <Text style={styles.dashboardText}>Map</Text>
-                    <Image style={styles.imageMap} source={require('../images/world.png')}/>
+                    <Image width={width/6.5} style={styles.imageMap} source={require('../images/world.png')}/>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.dashboardButton} activeOpacity={.5}
                 onPress={() => navigation.push('Wallet')}>
                     <Text style={styles.dashboardText}>Wallet</Text>
-                    <Image style={styles.imageCoin} source={require('../images/coinSmall.png')}/>
+                    <Image width={width/6.5} style={styles.imageCoin} source={require('../images/coinSmall.png')}/>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.dashboardButton} activeOpacity={.5}
                 onPress={() => navigation.push('Safety')}>
                     <Text style={styles.dashboardText}>Safety</Text>
-                    <Image style={styles.imageVirus} source={require('../images/virus.png')}/>
+                    <Image width={width/6.5} style={styles.imageVirus} source={require('../images/virus.png')}/>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.dashboardButton} activeOpacity={.5}
                 onPress={() => navigation.push('Account')}>
                     <Text style={styles.dashboardText}>Account</Text>
-                    <Image style={styles.imageAccount} source={require('../images/account.png')}/>
+                    <Image width={width/6.5}style={styles.imageAccount} source={require('../images/account.png')}/>
                 </TouchableOpacity>
             </View>
         </View>
@@ -49,21 +49,24 @@ const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     container : {
-        flex: 1,
+        flex: height,
+        alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor: '#F67183'
     },
     textContainer: {
-        flex: 1,
+        flex: height/800,
+        marginTop: height/55,
         alignItems: 'center',
     },
     text: {
         color: '#FFFFFF',
         fontFamily: 'poppins-semibold',
-        fontSize: 25,
+        fontSize: height/30,
         marginTop: height/15
       },
     dashboardContainer: {
-        flex: 5,
+        flex: height/150,
         alignItems: 'center',
         justifyContent: 'space-between',
         marginBottom: height/100,
@@ -73,31 +76,31 @@ const styles = StyleSheet.create({
         alignItems:'center',
         backgroundColor: '#FFFFFF',
         height: height/9,
-        width: width/1.45,
-        borderRadius: 50,
+        width: width/1.4,
+        borderRadius: height/15,
         flexDirection: 'row',
     },
     dashboardText: {
         color: '#000000', //#AA9090
-        fontSize: 20,
+        fontSize: height/45,
         fontFamily: 'poppins-regular',
     },
     imageSymptom: {
-        marginRight: '6%'
+        marginRight: width/35
     },
     imageMedal: {
-        marginRight: '1%'
+        
     },
     imageMap: {
-        marginRight: '-1%'
+        
     },
     imageCoin: {
-        marginRight: '1.5%'
+        marginRight: width/150
     },
     imageVirus: {
-        marginRight: '1%'
+        marginRight: width/150
     },
     imageAccount: {
-        marginRight: '4%'
+        marginRight: width/50
     },
 });

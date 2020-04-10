@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { Dimensions, StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
 
 export default function Safety ({navigation} : { navigation: any})  {
@@ -10,16 +10,22 @@ export default function Safety ({navigation} : { navigation: any})  {
             </View>
             <View style={styles.safetyContainer}>
                 <View style={styles.safetyButton}>
-                    <Text style={styles.safetyText}>Stay at home and limit non-essential travels.</Text>
+                    <Text style={styles.safetyText}>Stay at home and limit</Text>
+                    <Text style={styles.safetyText}>non-essential travels.</Text>
                 </View>
                 <View style={styles.safetyButton}>
-                    <Text style={styles.safetyText}>Wash hands frequently and avoid touching your face.</Text>
+                    <Text style={styles.safetyText}>Wash hands frequently</Text>
+                    <Text style={styles.safetyText}>avoid touching your face.</Text>
                 </View>
                 <View style={styles.safetyButton}>
-                    <Text style={styles.safetyText}>Avoid close contact with people at the risk of infecting them or vice verse.</Text>
+                    <Text style={styles.safetyText}>Avoid close contact with people</Text>
+                    <Text style={styles.safetyText}>at the risk of infecting them</Text>
+                    <Text style={styles.safetyText}>or vice verse.</Text>
                 </View>
                 <View style={styles.safetyButton}>
-                    <Text style={styles.safetyText}>Cover coughs and sneezes and clean and disineffect frequently touch surfaces.</Text>
+                    <Text style={styles.safetyText}>Cover coughs and sneezes. Clean</Text>
+                    <Text style={styles.safetyText}>and disineffect frequently</Text>
+                    <Text style={styles.safetyText}>touched surfaces.</Text>
                 </View>
             </View>
             <View style={styles.buttonsContainer}>
@@ -32,72 +38,60 @@ export default function Safety ({navigation} : { navigation: any})  {
     );
 };
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
     container : {
-        flex: 1,
-        backgroundColor: '#F67183'
+        flex: height,
+        backgroundColor: '#F67183',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     textContainer: {
-        alignItems: 'center',
-        marginVertical: 100
+        flex: height/900,
+        marginTop: height/14,
+        justifyContent: 'center',
     },
     text: {
         color: '#FFFFFF',
         fontFamily: 'poppins-semibold',
-        fontSize: 25,
+        fontSize: height/30,
       },
     safetyContainer: {
-        flex: 3,
-        alignItems: 'center',
-        marginVertical: -75,
-        justifyContent: 'center', 
-        height: 50,
-        borderRadius: 50,
-        margin: 50,
+        flex: height/300,
+        marginTop: -height/12,
+        justifyContent: 'center',
     },
     safetyButton:{
-        justifyContent: 'space-around', 
+        justifyContent: 'center', 
         alignItems:'center',
         backgroundColor: '#FFFFFF',
-        height: 100,
-        width: 300,
-        borderRadius: 50,
-        margin: 15,
-        //shadow
-        paddingTop: 5,
-        paddingBottom: 5,
-        paddingLeft: 50,
-        paddingRight: 50,
-        shadowColor: 'rgba(0, 0, 0, 0.1)',
-        shadowOpacity: 0.8,
-        elevation: 6,
-        shadowRadius: 15 ,
-        shadowOffset : { width: 1, height: 13},
+        height: height/9,
+        width: width/1.4,
+        borderRadius: height/15,
+        margin: height/90,
     },
     safetyText: {
         color: '#000000', 
-        fontSize: 15,
+        fontSize: height/60,
         fontFamily: 'poppins-regular',
     },
     buttonsContainer: {
-        flex: 1,
+        flex: height/900,
         alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'row'
     },
     button: {
-        backgroundColor: '#019CDD',
-        height: 50,
-        width: 300,
-        borderRadius: 50,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 50,
-        margin: 10
+        backgroundColor: '#019CDD',
+        height: height/17.5,
+        width: width/1.4,
+        borderRadius: height/15,
+        margin: height/90,
     },
     buttonText: {
         color: '#FFFFFF',
         fontFamily: 'poppins-medium',
-        fontSize: 15
+        fontSize: height/55
     },
 });

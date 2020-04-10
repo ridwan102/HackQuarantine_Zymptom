@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity, TextInput } from 'react-native';
+import { Dimensions, StyleSheet, View, Text, TouchableOpacity, TextInput } from 'react-native';
 
 
 export default function OtherSym ({navigation} : { navigation: any})  {
@@ -13,61 +13,62 @@ export default function OtherSym ({navigation} : { navigation: any})  {
                 <TextInput style={styles.textInput}> Type Here </TextInput>
             </View>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
+                <TouchableOpacity style={styles.button} activeOpacity={0.5}
                 onPress={() => navigation.push('Dashboard')}>
-                    <Text style={styles.ButtonText}>Complete</Text>
+                    <Text style={styles.buttonText}>Complete</Text>
                 </TouchableOpacity>
             </View>
         </View>
     );
 };
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
     container : {
-        flex: 1,
+        flex: height,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#F67183'
     },
     textContainer: {
-        flex: 1,
-        marginTop: 50,
+        flex: height/900,
+        marginTop: height/14,
         alignItems: 'center',
         justifyContent: 'center',
     },
     text: {
         color: '#FFFFFF',
         fontFamily: 'poppins-regular',
-        fontSize: 20,
+        fontSize: height/44,
       },
     TextInputContainer: {
-        flex: 4,
-        marginTop: -5
+        flex: height/220,
     },
     textInput: {
         backgroundColor: '#FFFFFF',
-        height: 400,
-        width: 325,
-        borderRadius: 50,
-        textAlignVertical: 'center',
+        color: '#ADADAD',
+        height: height/2.2,
+        width: width/1.4,
+        borderRadius: height/17,
         textAlign: 'center'
     },
     buttonsContainer: {
-        flex: 1,
-        marginTop: -300
+        flex: height/900,
+        marginTop: -height/3.5
     },
-    Button: {
+    button: {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#019CDD',
-        height: 50,
-        width: 300,
-        borderRadius: 50,
-        margin: 10,
+        height: height/17.5,
+        width: width/1.4,
+        borderRadius: height/15,
+        margin: height/90,
     },
-    ButtonText: {
+    buttonText: {
         color: '#FFFFFF',
+        fontSize: height/55,
         fontFamily: 'poppins-medium',
-        fontSize: 15
     },
 });

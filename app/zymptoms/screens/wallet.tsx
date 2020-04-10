@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
-
+import { Dimensions, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import Image from 'react-native-scalable-image';
 
 export default function Wallet ({navigation} : { navigation: any})  {
     return (
@@ -9,8 +9,8 @@ export default function Wallet ({navigation} : { navigation: any})  {
                 <Text style={styles.text}>Wallet</Text>
             </View>
             <View style={styles.rewardsContainer}>
-                <Image style={styles.rewardsImage} source={require('../images/coinSmall.png')}/>
-                <Text style={styles.rewardsText}>$$.$$$</Text>
+                <Image  width={width/10} style={styles.rewardsImage} source={require('../images/coinSmall.png')}/>
+                <Text style={styles.rewardsText}>$$$</Text>
             </View>
             <View style={styles.spendContainer}>
                 <TouchableOpacity style={styles.spendButton} activeOpacity={.5}
@@ -24,96 +24,98 @@ export default function Wallet ({navigation} : { navigation: any})  {
                 <Text style={styles.entriesText2}>Total Entries</Text>
             </View>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
+                <TouchableOpacity style={styles.button} activeOpacity={0.5}
                 onPress={() => navigation.push('Dashboard')}>
-                    <Text style={styles.ButtonText}>Dashboard</Text>
+                    <Text style={styles.buttonText}>Dashboard</Text>
                 </TouchableOpacity>
             </View>
         </View>
     );
 };
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
     container : {
-        flex: 1,
+        flex: height,
         backgroundColor: '#F67183'
     },
     textContainer: {
         alignItems: 'center',
-        marginTop: 100
+        flex: height/800,
+        marginTop: height/20,
     },
     text: {
         color: '#FFFFFF',
         fontFamily: 'poppins-semibold',
-        fontSize: 25,
+        fontSize: height/30,
+        marginTop: height/15
     },
     rewardsContainer: {
-        flex: 1,
+        flex: height/900,
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
-        marginTop: -15
+        marginTop: -height/9
     },
     rewardsText: {
         color: '#FFFFFF',
         fontFamily: 'poppins-regular',
-        fontSize: 35,
-        marginLeft: 10
+        fontSize: height/30,
+        marginLeft: width/40
     },
     rewardsImage: {
-        marginLeft: 10,
-        marginTop: -5
+        marginTop: -height/150
     },
     spendContainer: {
-        flex: 1,
+        flex: height/900,
         alignItems: 'center',
-        marginTop: 15
     },
     spendButton:{
         justifyContent: 'space-around', 
         alignItems:'center',
         backgroundColor: '#FFFFFF',
-        height: 100,
-        width: 300,
-        borderRadius: 50,
-        flexDirection: 'row'
+        height: height/9,
+        width: width/1.4,
+        borderRadius: height/15,
+        flexDirection: 'row',
     },
     spendText: {
         color: '#000000', 
-        fontSize: 20,
+        fontSize: height/45,
         fontFamily: 'poppins-regular',
     },
     entriesContainer: {
-        flex: 1,
+        flex: height/900,
         justifyContent: 'center',
         alignItems: 'center',
     },
     entriesText1: {
         color: '#FFFFFF',
         fontFamily: 'poppins-regular',
-        fontSize: 35,
+        fontSize: height/30,
     },
     entriesText2: {
         color: '#FFFFFF',
         fontFamily: 'poppins-regular',
-        fontSize: 15,
+        fontSize: height/55,
     },
     buttonsContainer: {
-        flex: 1,
+        flex: height/900,
+    },
+    button: {
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    Button: {
         backgroundColor: '#019CDD',
-        height: 50,
-        width: 300,
-        borderRadius: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
+        height: height/17.5,
+        width: width/1.4,
+        borderRadius: height/15,
+        margin: height/90,
+        marginLeft: width/6.5
     },
-    ButtonText: {
+    buttonText: {
         color: '#FFFFFF',
         fontFamily: 'poppins-medium',
-        fontSize: 15
+        fontSize: height/55
     },
 });

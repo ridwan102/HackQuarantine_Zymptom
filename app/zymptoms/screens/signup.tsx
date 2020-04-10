@@ -13,9 +13,15 @@ export default function SignUp ({navigation} : { navigation: any})  {
             <Text style={styles.titleText}>Zymptom</Text>
         </View>
         <View style={styles.textContainer}>
-          <TextInput style={styles.textInput}>  Email </TextInput>
-          <TextInput style={styles.textInput}>  Password </TextInput>
-          <TextInput style={styles.textInput}> Confirm Password </TextInput>
+          <View style={styles.textContainer1}>
+            <TextInput style={styles.textInput}>  Email </TextInput>
+          </View>
+          <View style={styles.textContainer1}>
+            <TextInput style={styles.textInput}>  Password </TextInput>
+          </View>
+          <View style={styles.textContainer1}>
+            <TextInput style={styles.textInput}> Confirm Password </TextInput>
+          </View>
             <TouchableOpacity style={styles.SignInButton} activeOpacity={0.5}
             onPress={() => navigation.push('Intro')}>
                 <Text style={styles.SignInText}> Sign Up </Text>
@@ -77,14 +83,18 @@ const styles = StyleSheet.create({
       flex: height/150,
       alignItems: 'center',
     },
-    textInput: {
+    textContainer1: {
       backgroundColor: '#FFFFFF',
-      color: '#ADADAD',
       height: height/17.5,
       width: width/1.4,
       borderRadius: height/15,
       margin: height/90,
-      fontSize: height/55
+      justifyContent: 'center',
+    },
+    textInput: {
+      color: '#ADADAD',
+      fontSize: height/55,
+      marginLeft: width/25
     },
     SignInButton: {
       alignItems: 'center',

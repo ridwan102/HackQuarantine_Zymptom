@@ -1,5 +1,6 @@
 import React from 'react';
-import { Dimensions, StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { Dimensions, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import Image from 'react-native-scalable-image';
 
 
 export default function Intro ({navigation} : { navigation: any})  {
@@ -11,7 +12,7 @@ export default function Intro ({navigation} : { navigation: any})  {
                 <Text style={styles.text}>to collect some information from you</Text>
             </View>
             <View style={styles.imageContainer}>
-                <Image source={require('../images/intro.png')}/>
+                <Image width={width/2.5} source={require('../images/intro.png')}/>
             </View>
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity style={styles.button} activeOpacity={0.5}
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
         color: '#FFFFFF',
         fontSize: height/55,
         fontFamily: 'poppins-regular',
-      },
+    },
     imageContainer: {
         flex: height/400,
         justifyContent: 'center',

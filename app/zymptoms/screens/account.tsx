@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
-
+import { Dimensions, StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
+import Image from 'react-native-scalable-image';
 
 export default function Account ({navigation} : { navigation: any})  {
     return (
@@ -9,105 +9,100 @@ export default function Account ({navigation} : { navigation: any})  {
                 <Text style={styles.text}>Account</Text>
             </View>
             <View style={styles.userContainer}>
-                <Image source={require('../images/user.png')}/>
+                <Image width={width/3.5} source={require('../images/user.png')}/>
                 <Text style={styles.userText}>User Name</Text>
                 <TouchableOpacity style={styles.userButton} activeOpacity={.5}>
-                    <Text style={styles.userText}>First and Last</Text>
+                    <TextInput style={styles.userText}>First and Last</TextInput>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.userButton} activeOpacity={.5}>
-                    <Text style={styles.userText}>email@user.com</Text>
+                    <TextInput style={styles.userText}>email@user.com</TextInput>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.userButton} activeOpacity={.5}>
-                    <Text style={styles.userText}>Phone Number</Text>
+                    <TextInput style={styles.userText}>Phone Number</TextInput>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.userButton} activeOpacity={.5}>
-                    <Text style={styles.userText}>City and State</Text>
+                    <TextInput style={styles.userText}>City and State</TextInput>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.userButton} activeOpacity={.5}>
-                    <Text style={styles.userText}>Zip Code</Text>
+                    <TextInput style={styles.userText}>Zip Code</TextInput>
                 </TouchableOpacity>
             </View>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
+                <TouchableOpacity style={styles.button} activeOpacity={0.5}
                     onPress={() => navigation.push('Dashboard')}>
-                    <Text style={styles.ButtonText}>Dashboard</Text>
+                    <Text style={styles.buttonText}>Dashboard</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
+                <TouchableOpacity style={styles.button} activeOpacity={0.5}
                 onPress={() => navigation.push('SignIn')}>
-                    <Text style={styles.ButtonText}>Logout</Text>
+                    <Text style={styles.buttonText}>Logout</Text>
                 </TouchableOpacity>
             </View>
         </View>
     );
 };
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
     container : {
-        flex: 1,
+        flex: height,
         backgroundColor: '#F67183'
     },
     textContainer: {
         alignItems: 'center',
-        marginVertical: 100
+        marginTop: height/8
     },
     text: {
         color: '#FFFFFF',
         fontFamily: 'poppins-semibold',
-        fontSize: 25,
+        fontSize: height/30,
       },
     userContainer: {
-        flex: 3,
+        flex: height/300,
         alignItems: 'center',
-        marginVertical: -75,
         justifyContent: 'center', 
         backgroundColor: '#FFFFFF',
-        height: 50,
-        borderRadius: 50,
-        margin: 50,
+        borderRadius: height/17,
+        width: width/1.2,
+        marginLeft: width/12,
     },
     userButton:{
-        justifyContent: 'space-around', 
+        justifyContent: 'center', 
         alignItems:'center',
         backgroundColor: '#FFFFFF',
-        height: 50,
-        width: 300,
+        height: height/17.5,
+        width: width/1.4,
         borderRadius: 50,
-        margin: 15,
+        margin: height/90,
         //shadow
-        paddingTop: 5,
-        paddingBottom: 5,
-        paddingLeft: 50,
-        paddingRight: 50,
-        shadowColor: 'rgba(0, 0, 0, 0.1)',
+        shadowColor: 'rgba(0, 0, 0, 0.25)',
         shadowOpacity: 0.8,
-        elevation: 6,
-        shadowRadius: 15 ,
-        shadowOffset : { width: 1, height: 13},
+        elevation: height/150,
+        shadowOffset : { width: width/100, height: height/75},
     },
     userText: {
         color: '#000000', 
-        fontSize: 17,
+        fontSize: height/55,
         fontFamily: 'poppins-regular',
     },
     buttonsContainer: {
-        flex: 1,
+        flex: height/900,
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row'
     },
-    Button: {
-        backgroundColor: '#019CDD',
-        height: 50,
-        width: 135,
-        borderRadius: 50,
+    button: {
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 50,
-        margin: 10
+        backgroundColor: '#019CDD',
+        height: height/17.5,
+        width: width/2.8,
+        borderRadius: height/15,
+        margin: height/90,
     },
-    ButtonText: {
+    buttonText: {
         color: '#FFFFFF',
         fontFamily: 'poppins-medium',
-        fontSize: 15
+        fontSize: height/55
     },
 });

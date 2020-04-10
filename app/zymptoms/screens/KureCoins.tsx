@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { Dimensions, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import Image from 'react-native-scalable-image';
 
 
 export default function KureCoins ({navigation} : { navigation: any})  {
@@ -10,61 +11,62 @@ export default function KureCoins ({navigation} : { navigation: any})  {
                 <Text style={styles.text}>will earn you Kure Coins</Text>
             </View>
             <View style={styles.coinContainer}>
-                <Image source={require('../images/coin.png')}/>
+                <Image width={width/3.45} source={require('../images/coin.png')}/>
             </View>
             <View style={styles.textContainer}>
                 <Text style={styles.text}>Redeemable for giftcards, </Text>
                 <Text style={styles.text}>special offers, and more!</Text>
             </View>
             <View style={styles.rewardsContainer}>
-                <Image style={styles.rewardsImage} source={require('../images/amazon.png')}/>
-                <Image style={styles.rewardsImage} source={require('../images/google.png')}/>
-                <Image style={styles.rewardsImage} source={require('../images/itunes.png')}/>
+                <Image width={width/6} style={styles.rewardsImage} source={require('../images/amazon.png')}/>
+                <Image width={width/6} style={styles.rewardsImage} source={require('../images/google.png')}/>
+                <Image width={width/6} style={styles.rewardsImage} source={require('../images/itunes.png')}/>
             </View>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
+                <TouchableOpacity style={styles.button} activeOpacity={0.5}
                 onPress={() => navigation.push('DashboardEx')}>
-                    <Text style={styles.ButtonText}>Continue</Text>
+                    <Text style={styles.buttonText}>Continue</Text>
                 </TouchableOpacity>
             </View>
         </View>
     );
 };
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
     container : {
-        flex: 1,
+        flex: height,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#F67183'
     },
     titleContainer: {
-        flex: 1,
-        marginTop: 50,
+        flex: height/900,
+        marginTop: height/10,
         alignItems: 'center',
         justifyContent: 'center',
     },
     text: {
         color: '#FFFFFF',
         fontFamily: 'poppins-regular',
-        fontSize: 20,
+        fontSize: height/44,
     },
     coinContainer: {
-        flex: 1,
+        flex: height/900,
         justifyContent: 'center',
         alignItems: 'center',
     },
     textContainer: {
-        flex: 1,
-        marginTop: 20,
+        flex: height/900,
+        marginTop: height/40,
         alignItems: 'center',
         justifyContent: 'center',
     },
     rewardsContainer: {
-        flex: 1,
+        flex: height/900,
         flexDirection: 'row',
-        marginTop: -20,
-        justifyContent: 'space-evenly',
+        marginTop: -height/40,
         alignItems: 'center',
     },
     rewardsImage: {
@@ -73,20 +75,20 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     buttonsContainer: {
-        flex: 1,
-        marginTop: 50
+        flex: height/900,
     },
-    Button: {
+    button: {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#019CDD',
-        height: 50,
-        width: 300,
-        borderRadius: 50,
+        height: height/17.5,
+        width: width/1.4,
+        borderRadius: height/15,
+        margin: height/90,
     },
-    ButtonText: {
+    buttonText: {
         color: '#FFFFFF',
-        fontSize: 15,
+        fontSize: height/55,
         fontFamily: 'poppins-medium',
     },
 });

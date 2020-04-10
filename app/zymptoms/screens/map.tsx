@@ -1,68 +1,69 @@
 import React from 'react';
-import { StyleSheet, View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
+import { Dimensions, StyleSheet, View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
 
 
 export default function Map ({navigation} : { navigation: any})  {
     return (
         <View style= { styles.container }>
             <View style={styles.textContainer}>
-                <TextInput style={styles.textInput}> Search here </TextInput>
+                <TextInput style={styles.textInput}>Search</TextInput>
             </View>
             <View style={styles.mapContainer}>
                 <Image source={require('../images/map.png')}/>
             </View>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
+                <TouchableOpacity style={styles.button} activeOpacity={0.5}
                 onPress={() => navigation.push('Dashboard')}>
-                    <Text style={styles.ButtonText}>Dashboard</Text>
+                    <Text style={styles.buttonText}>Dashboard</Text>
                 </TouchableOpacity>
             </View>
         </View>
     );
 };
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
     container : {
-        flex: 1,
+        flex: height,
         alignItems: 'center',
         justifyContent: 'center',
     },
     mapContainer: {
-        flex: 3,
+        flex: height/300,
         justifyContent: 'center',
         alignItems: 'center',
-    },
-    buttonsContainer: {
-        flex: 1,
-    },
-    Button: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#019CDD',
-        height: 50,
-        width: 300,
-        borderRadius: 50,
-        margin: 10,
-    },
-    ButtonText: {
-        color: '#FFFFFF',
-        fontSize: 15,
-        fontFamily: 'poppins-medium',
     },
     textContainer: {
-        flex: 1,
-        marginTop: 50,
+        marginTop: height/10,
+        backgroundColor: '#000000',
+        height: height/15,
+        width: width/1.4,
+        borderRadius: height/15,
+        margin: height/90,
         alignItems: 'center',
         justifyContent: 'center',
     },
     textInput: {
+        color: '#ADADAD',
+        fontSize: height/55,
+      },
+    buttonsContainer: {
+        flex: height/900,
+        marginTop: -height/3.5
+    },
+    button: {
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#000000',
-        color: '#ADADAD',
-        height: 50,
-        width: 300,
-        borderRadius: 50,
-        margin: 10,
-      },
+        backgroundColor: '#019CDD',
+        height: height/17.5,
+        width: width/1.4,
+        borderRadius: height/15,
+        margin: height/90,
+    },
+    buttonText: {
+        color: '#FFFFFF',
+        fontSize: height/55,
+        fontFamily: 'poppins-medium',
+    },
 });

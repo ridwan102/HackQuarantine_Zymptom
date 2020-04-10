@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     text: {
         color: '#FFFFFF',
         fontFamily: 'poppins-regular',
-        fontSize: height/45,
+        fontSize: height/44,
       },
     symptomContainer: {
         flex: height/300,

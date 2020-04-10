@@ -16,7 +16,9 @@ export default function Password ({navigation} : { navigation: any})  {
                 <Text style={styles.text}>account you will shortly receive an email</Text>
             </View>
             <View style={styles.inputContainer}>
-              <TextInput style={styles.textInput}> Email </TextInput>
+              <View style={styles.textContainer}>
+                <TextInput style={styles.textInput}> Email </TextInput>
+              </View>
               <TouchableOpacity style={styles.buttonContainer} activeOpacity={0.5}>
                   <Text style={styles.buttonText}> Reset Password </Text>
               </TouchableOpacity>
@@ -82,14 +84,18 @@ const styles = StyleSheet.create({
       marginTop: -height/12.5,
       alignItems: 'center',
     },
-    textInput: {
+    textContainer: {
       backgroundColor: '#FFFFFF',
-      color: '#ADADAD',
       height: height/17.5,
       width: width/1.4,
       borderRadius: height/15,
       margin: height/90,
-      fontSize: height/55
+      justifyContent: 'center',
+    },
+    textInput: {
+      color: '#ADADAD',
+      fontSize: height/55,
+      marginLeft: width/25
     },
     buttonContainer: {
       alignItems: 'center',

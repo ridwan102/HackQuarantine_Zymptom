@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
-
+import { Dimensions, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import Image from 'react-native-scalable-image';
 
 export default function DashboardEx ({navigation} : { navigation: any})  {
     return (
@@ -10,85 +10,94 @@ export default function DashboardEx ({navigation} : { navigation: any})  {
                 <Text style={styles.text}>you will have access to everything!</Text>
             </View>
             <View style={styles.dashboardContainer}>
+                <View style={styles.dashboardButton} >
+                    <Text style={styles.dashboardText}>Symptoms</Text>
+                    <Image width={width/6.5} style={styles.imageSymptom} source={require('../images/symptom1.png')}/>
+                </View>
                 <View style={styles.dashboardButton}>
                     <Text style={styles.dashboardText}>Streak</Text>
-                    <Image source={require('../images/medal.png')}/>
+                    <Image width={width/6.5} source={require('../images/medal.png')}/>
                 </View>
                 <View style={styles.dashboardButton}>
                     <Text style={styles.dashboardText}>Map</Text>
-                    <Image source={require('../images/world.png')}/>
+                    <Image width={width/6.5} source={require('../images/world.png')}/>
                 </View>
                 <View style={styles.dashboardButton}>
                     <Text style={styles.dashboardText}>Wallet</Text>
-                    <Image style={styles.imageCoin} source={require('../images/coinSmall.png')}/>
+                    <Image width={width/6.5} style={styles.imageCoin} source={require('../images/coinSmall.png')}/>
                 </View>
             </View>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
+                <TouchableOpacity style={styles.button} activeOpacity={0.5}
                 onPress={() => navigation.push('Exit')}>
-                    <Text style={styles.ButtonText}>Continue</Text>
+                    <Text style={styles.buttonText}>Continue</Text>
                 </TouchableOpacity>
             </View>
         </View>
     );
 };
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
     container : {
-        flex: 1,
+        flex: height,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#F67183'
     },
     textContainer: {
-        flex: 1,
-        marginTop: 50,
+        flex: height/900,
+        marginTop: height/14,
         alignItems: 'center',
         justifyContent: 'center',
     },
     text: {
         color: '#FFFFFF',
         fontFamily: 'poppins-regular',
-        fontSize: 20,
+        fontSize: height/44,
       },
     dashboardContainer: {
-        flex: 3,
+        flex: height/300,
+        marginTop: -height/12,
         justifyContent: 'center',
-        alignItems: 'center',
     },
     dashboardButton:{
         justifyContent: 'space-around', 
         alignItems:'center',
         backgroundColor: '#FFFFFF',
-        height: 100,
-        width: 300,
-        borderRadius: 50,
-        margin: 25,
+        height: height/9,
+        width: width/1.4,
+        borderRadius: height/15,
+        margin: height/90,
         flexDirection: 'row'
     },
     dashboardText: {
         color: '#000000', //'#AA9090'
-        fontSize: 20,
+        fontSize: height/45,
         fontFamily: 'poppins-regular',
     },
+    imageSymptom: {
+        marginRight: width/35
+    },
     imageCoin: {
-        marginRight: 15
+        marginRight: width/150
     },
     buttonsContainer: {
-        flex: 1,
+        flex: height/900,
     },
-    Button: {
+    button: {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#019CDD',
-        height: 50,
-        width: 300,
-        borderRadius: 50,
-        margin: 10,
+        height: height/17.5,
+        width: width/1.4,
+        borderRadius: height/15,
+        margin: height/90,
     },
-    ButtonText: {
+    buttonText: {
         color: '#FFFFFF',
-        fontSize: 15,
+        fontSize: height/55,
         fontFamily: 'poppins-medium',
     },
 });

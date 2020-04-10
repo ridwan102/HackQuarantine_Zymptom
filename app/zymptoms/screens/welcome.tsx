@@ -53,13 +53,13 @@ const styles = StyleSheet.create({
         height: height/12,
         width: width/6,
         borderRadius: height/40,
-        alignItems: 'center'
+        alignItems: 'center',
     },
     logoText: { 
         color: '#FF3954',
         fontSize: height/17,
         fontFamily: 'poppins-bold',
-        marginTop: -height/175
+        marginTop: -height/170
     },
     titleText: {
         color: '#FFFFFF',

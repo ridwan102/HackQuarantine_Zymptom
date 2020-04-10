@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
-
+import { Dimensions, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import Image from 'react-native-scalable-image';
 
 export default function Severity ({navigation} : { navigation: any})  {
     return (
@@ -10,79 +10,76 @@ export default function Severity ({navigation} : { navigation: any})  {
                 <Text style={styles.text}>your severity</Text>
             </View>
             <View style={styles.severityContainer}>
-                <TouchableOpacity style={styles.symptomButton} activeOpacity={0.5}>
-                    <Image source={require('../images/smile5.png')}/>
+                <TouchableOpacity style={styles.smileyButton} activeOpacity={0.5}>
+                    <Image width={width/6} source={require('../images/smile5.png')}/>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.symptomButton} activeOpacity={0.5}>
-                    <Image source={require('../images/smile4.png')}/>
+                <TouchableOpacity style={styles.smileyButton} activeOpacity={0.5}>
+                    <Image width={width/6} source={require('../images/smile4.png')}/>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.symptomButton} activeOpacity={0.5}>
-                    <Image source={require('../images/smile3.png')}/>
+                <TouchableOpacity style={styles.smileyButton} activeOpacity={0.5}>
+                    <Image width={width/6} source={require('../images/smile3.png')}/>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.symptomButton} activeOpacity={0.5}>
-                    <Image source={require('../images/smile2.png')}/>
+                <TouchableOpacity style={styles.smileyButton} activeOpacity={0.5}>
+                    <Image width={width/6} source={require('../images/smile2.png')}/>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.symptomButton} activeOpacity={0.5}>
-                    <Image source={require('../images/smile1.png')}/>
+                <TouchableOpacity style={styles.smileyButton} activeOpacity={0.5}>
+                    <Image width={width/6} source={require('../images/smile1.png')}/>
                 </TouchableOpacity>
             </View>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
+                <TouchableOpacity style={styles.button} activeOpacity={0.5}
                 onPress={() => navigation.push('Symptoms')}>
-                    <Text style={styles.ButtonText}>Continue</Text>
+                    <Text style={styles.buttonText}>Continue</Text>
                 </TouchableOpacity>
             </View>
         </View>
     );
 };
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
     container : {
-        flex: 1,
+        flex: height,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#F67183'
     },
     textContainer: {
-        flex: 1,
-        marginTop: 50,
+        flex: height/900,
+        marginTop: height/14,
         alignItems: 'center',
         justifyContent: 'center',
     },
     text: {
         color: '#FFFFFF',
         fontFamily: 'poppins-regular',
-        fontSize: 20,
+        fontSize: height/44,
       },
     severityContainer: {
-        flex: 4,
+        flex: height/200,
+        marginTop: -height/12,
         justifyContent: 'center',
-        marginTop: -30
     },
-    symptomButton: {
+    smileyButton: {
         alignItems: 'center',
-        margin: 10,
-    },
-    symptomText: {
-        color: '#019CDD',
-        fontSize: 20,
-        marginLeft: 30
+        margin: height/90,
     },
     buttonsContainer: {
-        flex: 1,
+        flex: height/900,
     },
-    Button: {
+    button: {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#019CDD',
-        height: 50,
-        width: 300,
-        borderRadius: 50,
-        margin: 10,
+        height: height/17.5,
+        width: width/1.4,
+        borderRadius: height/15,
+        margin: height/90,
     },
-    ButtonText: {
+    buttonText: {
         color: '#FFFFFF',
+        fontSize: height/55,
         fontFamily: 'poppins-medium',
-        fontSize: 15
     },
 });

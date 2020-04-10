@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { Dimensions, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
 
 export default function StreakEx ({navigation} : { navigation: any})  {
@@ -9,99 +9,84 @@ export default function StreakEx ({navigation} : { navigation: any})  {
                 <Text style={styles.text}>Ok great! You just made your</Text>
                 <Text style={styles.text}>first streak!</Text>
             </View>
-            <View style={styles.streakContainer1}>
-                <Text style={styles.streakText1}>Day 1</Text>
-                <Image style={styles.streakImage} source={require('../images/check.png')}/>
-            </View>
-            <View style={styles.streakContainer2}>
-                <Text style={styles.streakText2}>Day 2</Text>
-                <Text style={styles.streakText2}>Day 3</Text>
+            <View style={styles.streakContainer}>
+                <View style={styles.streakButton}>
+                    <Text style={styles.streakText}>Day 1</Text>
+                </View>
+                <View style={[styles.streakButton, styles.opacity]}>
+                    <Text style={styles.streakText}>Day 2</Text>
+                </View>
+                <View style={[styles.streakButton, styles.opacity]}>
+                    <Text style={styles.streakText}>Day 3</Text>
+                </View>
             </View>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.Button} activeOpacity={0.5}
+                <TouchableOpacity style={styles.button} activeOpacity={0.5}
                 onPress={() => navigation.push('KureCoins')}>
-                    <Text style={styles.ButtonText}>Continue</Text>
+                    <Text style={styles.buttonText}>Continue</Text>
                 </TouchableOpacity>
             </View>
         </View>
     );
 };
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
     container : {
-        flex: 1,
+        flex: height,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#F67183'
     },
     textContainer: {
-        flex: 1,
-        marginTop: 50,
+        flex: height/900,
+        marginTop: height/10,
         alignItems: 'center',
         justifyContent: 'center',
     },
     text: {
         color: '#FFFFFF',
         fontFamily: 'poppins-regular',
-        fontSize: 20,
+        fontSize: height/44,
       },
-    streakContainer1: {
-        flex: 1,
-        marginTop: -65,
-        marginLeft: -55,
-        alignItems: 'center',
-        flexDirection: 'row'
-    },
-    streakText1: {
-        backgroundColor: '#FFFFFF',
-        height: 100,
-        width: 300,
-        borderRadius: 50,
-        margin: 10,
-        color: '#019CDD',
-        fontSize: 29,
-        textAlignVertical: 'center',
-        textAlign: 'center',
-        fontFamily: 'poppins-regular',
-    },
-    streakImage: {
-        marginTop: -10,
-        marginLeft: -100
-    },
-    streakContainer2: {
-        flex: 2,
-        marginTop: -102.5,
+    streakContainer: {
+        flex: height/400,
         justifyContent: 'center',
-        alignItems: 'center',
+        marginTop: -height/13
     },
-    streakText2: {
+    streakButton: {
+        alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor: '#FFFFFF',
-        opacity: 0.5,
-        height: 100,
-        width: 300,
-        borderRadius: 50,
-        margin: 15,
+        height: height/9,
+        width: width/1.4,
+        borderRadius: height/15,
+        margin: height/50,
+    },
+    streakText: {
         color: '#019CDD',
-        fontSize: 29,
-        textAlignVertical: 'center',
-        textAlign: 'center',
+        fontSize: height/45,
         fontFamily: 'poppins-regular',
+    },
+    opacity:{
+        opacity: 0.5
     },
     buttonsContainer: {
-        flex: 1,
+        flex: height/900,
     },
-    Button: {
+    button: {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#019CDD',
-        height: 50,
-        width: 300,
-        borderRadius: 50,
-        margin: 10,
+        height: height/17.5,
+        width: width/1.4,
+        borderRadius: height/15,
+        margin: height/90,
     },
-    ButtonText: {
+    buttonText: {
         color: '#FFFFFF',
-        fontSize: 15,
+        fontSize: height/55,
         fontFamily: 'poppins-medium',
     },
 });
