@@ -11,27 +11,28 @@ export default function SeverityDay1 ({navigation} : { navigation: any})  {
                 <Text style={styles.text}>your severity</Text>
             </View>
             <View style={styles.severityContainer}>
-                <TouchableOpacity style={styles.smileyButton} activeOpacity={0.5}>
+                <TouchableOpacity style={styles.smileyButton} activeOpacity={0.5}
+                onPress={() => navigation.push('SymptomsDay1')}>
                     <Image width={width/6} source={require('../images/smile5.png')}/>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.smileyButton} activeOpacity={0.5}>
+                <TouchableOpacity style={styles.smileyButton} activeOpacity={0.5}
+                onPress={() => navigation.push('SymptomsDay1')}>
                     <Image width={width/6}source={require('../images/smile4.png')}/>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.smileyButton} activeOpacity={0.5}>
+                <TouchableOpacity style={styles.smileyButton} activeOpacity={0.5}
+                onPress={() => navigation.push('SymptomsDay1')}>
                     <Image  width={width/6} source={require('../images/smile3.png')}/>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.smileyButton} activeOpacity={0.5}>
+                <TouchableOpacity style={styles.smileyButton} activeOpacity={0.5}
+                onPress={() => navigation.push('SymptomsDay1')}>
                     <Image width={width/6} source={require('../images/smile2.png')}/>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.smileyButton} activeOpacity={0.5}>
+                <TouchableOpacity style={styles.smileyButton} activeOpacity={0.5}
+                onPress={() => navigation.push('SymptomsDay1')}>
                     <Image width={width/6} source={require('../images/smile1.png')}/>
                 </TouchableOpacity>
             </View>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.button} activeOpacity={0.5}
-                onPress={() => navigation.push('SymptomsDay1')}>
-                    <Text style={styles.buttonText}>Continue</Text>
-                </TouchableOpacity>
             </View>
         </View>
     );

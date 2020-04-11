@@ -10,11 +10,12 @@ export default function Safety ({navigation} : { navigation: any})  {
                 <Text style={styles.text}>To help fight 
                 <Text style={{fontWeight: "bold"}}> pandemics</Text>, this app allows</Text>
                 <Text style={styles.text}>everyone to input their daily symptoms to</Text>
-                <Text style={styles.text}>spread awareness of potential viruses to the</Text>
+                <Text style={styles.text}>spread awareness of potential viruses to their</Text>
                 <Text style={styles.text}>local and global communities.</Text>
                 <Text></Text>
-                <Text style={styles.text}>This data can be used by medical professionals</Text> 
-                <Text style={styles.text}>and governments to combat the seasonal virus.</Text>
+                <Text style={styles.text}>The information provided can then aid</Text> 
+                <Text style={styles.text}>medical professionals and governments to</Text>
+                <Text style={styles.text}>combat seasonal viruses.</Text>
                 <Text></Text>
                 <Text style={styles.text}>By helping us spread awareness, you will</Text>
                 <Text style={styles.text}>receive KureCoins which are redeemable for</Text>
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
     },
     text: {
         color: '#FFFFFF', 
-        fontSize: height/60,
+        fontSize: height/55,
         fontFamily: 'poppins-regular',
         textAlign: 'center'
     },

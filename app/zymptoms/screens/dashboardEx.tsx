@@ -12,7 +12,7 @@ export default function DashboardEx ({navigation} : { navigation: any})  {
             <View style={styles.dashboardContainer}>
                 <View style={styles.dashboardButton} >
                     <Text style={styles.dashboardText}>Symptoms</Text>
-                    <Image width={width/6.5} style={styles.imageSymptom} source={require('../images/symptom1.png')}/>
+                    <Image width={width/6.5} style={styles.imageSymptom} source={require('../images/symptom.png')}/>
                 </View>
                 <View style={styles.dashboardButton}>
                     <Text style={styles.dashboardText}>Streak</Text>

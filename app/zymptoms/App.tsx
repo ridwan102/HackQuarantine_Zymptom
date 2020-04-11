@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 //import react in our code.
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -45,10 +45,13 @@ let customFonts = {
 
 const Stack = createStackNavigator();
 
+// const App = () => {
+//   const API_KEY = "<YOUR_API_KEY_HERE>";
+//   const URL = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${API_KEY}`;
 
 export default class App extends React.Component {
 
-  state = {
+  state={
     fontsLoaded: false,
   };
 

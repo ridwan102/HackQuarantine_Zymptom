@@ -2,13 +2,22 @@ import React from 'react';
 import { Dimensions, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
 
-export default function SymptomsDay1 ({navigation} : { navigation: any})  {
+export default function SymptomsDay1 (this: any, {navigation} : { navigation: any})  {
+
     return (
         <View style= { styles.container }>
+
             <View style={styles.textContainer}>
                 <Text style={styles.text}>Click the ones that apply to you</Text>
             </View>
             <View style={styles.symptomContainer}>
+
+                {/* <TouchableOpacity
+                    onPress={(this.send)}
+                >
+                    <Text>ITEM</Text>
+                </TouchableOpacity> */}
+
                 <TouchableOpacity style={styles.symptomButton} activeOpacity={0.5}
                 onPress={() => navigation.push('SeverityDay1')}>
                     <Text style={styles.symptomText}>Cough</Text>
@@ -44,6 +53,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#F67183'
+    },
+    backgroundColor:{
+        backgroundColor: 'white'
     },
     textContainer: {
         flex: height/900,

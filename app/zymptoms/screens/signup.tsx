@@ -1,9 +1,31 @@
 import React from 'react';
-import { StyleSheet, View, Text, TextInput, Image, TouchableOpacity, Dimensions } from 'react-native';
+import { Button, StyleSheet, View, Text, TextInput, Image, TouchableOpacity, Dimensions } from 'react-native';
 
 //Text Input: https://reactnative.dev/docs/textinput.html
 
+// fetch('https://zymptoms.herokuapp.com/api/v1/create_user', {
+//   method: 'POST',
+//   headers: {
+//     Accept: 'application/json',
+//     'Content-Type' : 'application/json',
+//    },
+//   body: JSON.stringify ({
+//     'email': 'email',
+//     'password': 'password',
+//   }),
+//   }).then((response) => response.json())
+//       .then((responseJson) => {
+//         return responseJson.email;
+//       })
+//       .catch((error) => {
+//         console.error(error);
+//       });
+
+
+
 export default function SignUp ({navigation} : { navigation: any})  {
+  
+    
   return (
     <View style= { styles.container }>
         <View style={styles.content}>
@@ -14,13 +36,13 @@ export default function SignUp ({navigation} : { navigation: any})  {
         </View>
         <View style={styles.textContainer}>
           <View style={styles.textContainer1}>
-            <TextInput style={styles.textInput}>  Email </TextInput>
+            <TextInput placeholder="Email" style={styles.textInput}></TextInput>
           </View>
           <View style={styles.textContainer1}>
-            <TextInput style={styles.textInput}>  Password </TextInput>
+            <TextInput placeholder="Password" secureTextEntry={true} style={styles.textInput}></TextInput>
           </View>
           <View style={styles.textContainer1}>
-            <TextInput style={styles.textInput}> Confirm Password </TextInput>
+            <TextInput placeholder="Confirm Password" secureTextEntry={true} style={styles.textInput}></TextInput>
           </View>
             <TouchableOpacity style={styles.SignInButton} activeOpacity={0.5}
             onPress={() => navigation.push('Intro')}>
@@ -92,7 +114,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     textInput: {
-      color: '#ADADAD',
+      color: '#000000',
       fontSize: height/55,
       marginLeft: width/25
     },

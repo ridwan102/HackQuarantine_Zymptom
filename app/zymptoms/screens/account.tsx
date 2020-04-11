@@ -12,19 +12,19 @@ export default function Account ({navigation} : { navigation: any})  {
                 <Image width={width/3.5} source={require('../images/user.png')}/>
                 <Text style={styles.userText}>User Name</Text>
                 <TouchableOpacity style={styles.userButton} activeOpacity={.5}>
-                    <TextInput style={styles.userText}>First and Last</TextInput>
+                    <TextInput placeholder="First and Last Names" style={styles.userText}></TextInput>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.userButton} activeOpacity={.5}>
-                    <TextInput style={styles.userText}>email@user.com</TextInput>
+                    <TextInput placeholder="Email" style={styles.userText}></TextInput>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.userButton} activeOpacity={.5}>
-                    <TextInput style={styles.userText}>Phone Number</TextInput>
+                    <TextInput placeholder="Phone Number" style={styles.userText}></TextInput>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.userButton} activeOpacity={.5}>
-                    <TextInput style={styles.userText}>City and State</TextInput>
+                    <TextInput placeholder="City and State" style={styles.userText}></TextInput>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.userButton} activeOpacity={.5}>
-                    <TextInput style={styles.userText}>Zip Code</TextInput>
+                    <TextInput placeholder="Zip Code" style={styles.userText}></TextInput>
                 </TouchableOpacity>
             </View>
             <View style={styles.buttonsContainer}>
@@ -84,6 +84,8 @@ const styles = StyleSheet.create({
         color: '#000000', 
         fontSize: height/55,
         fontFamily: 'poppins-regular',
+        textAlign: 'center',
+        width: width/1.2,
     },
     buttonsContainer: {
         flex: height/900,

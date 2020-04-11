@@ -10,7 +10,7 @@ export default function OtherHealth ({navigation} : { navigation: any})  {
                 <Text style={styles.text}>conditions? If not, press continue</Text>
             </View>
             <View style={styles.TextInputContainer}>
-                <TextInput style={styles.textInput}> Type Here </TextInput>
+                <TextInput placeholder="Enter Here" style={styles.textInput}></TextInput>
             </View>
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity style={styles.button} activeOpacity={0.5}

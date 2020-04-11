@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Dimensions, StyleSheet, View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
 //Text Input Source: https://reactnative.dev/docs/textinput.html
 
@@ -13,10 +13,10 @@ export default function Login ({navigation} : { navigation: any})  {
             </View>
             <View style={styles.inputContainer}>
               <View style={styles.textContainer}>
-                <TextInput style={styles.textInput}> Email </TextInput>
+                <TextInput placeholder="Email" style={styles.textInput}></TextInput>
               </View>
               <View style={styles.textContainer}>
-                <TextInput style={styles.textInput}> Password </TextInput>
+                <TextInput secureTextEntry={true} placeholder="Password" style={styles.textInput}></TextInput>
               </View>
               <TouchableOpacity style={styles.SignInButton} activeOpacity={0.5}
               onPress={() => navigation.push('Dashboard')}>
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     textInput: {
-      color: '#ADADAD',
+      color: '#000000',
       fontSize: height/55,
       marginLeft: width/25
     },

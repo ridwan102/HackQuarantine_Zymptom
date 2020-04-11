@@ -10,7 +10,7 @@ export default function OtherSymDay1 ({navigation} : { navigation: any})  {
                 <Text style={styles.text}>issues? If not, press continue</Text>
             </View>
             <View style={styles.TextInputContainer}>
-                <TextInput style={styles.textInput}> Enter Here </TextInput>
+                <TextInput placeholder="Enter Here" style={styles.textInput}></TextInput>
             </View>
             <View style={styles.buttonsContainer}>
                 <TouchableOpacity style={styles.button} activeOpacity={0.5}
