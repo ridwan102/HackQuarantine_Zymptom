@@ -1,8 +1,68 @@
 import React, { useState, useEffect } from 'react';
-import { Dimensions, StyleSheet, View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
+import { Dimensions, StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
 //Text Input Source: https://reactnative.dev/docs/textinput.html
+import { Base64 } from 'js-base64';
 
-export default function Login ({navigation} : { navigation: any})  {
+
+interface AppState {
+  navigation  : any;
+}
+
+interface AppProps {
+  email : any;
+  password: any;
+}
+
+export default class SignIn extends React.Component <AppState, AppProps>  {
+  
+  constructor(props: any) {
+    super(props);
+    this.state = {
+        email: '',
+        password: '',
+      }
+    
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event:any) {
+    switch(event.target.name) {
+        case 'email':
+            this.setState({ email: event.target.value });
+            break;
+        case 'password':
+            this.setState({ password: event.target.value });
+            break;
+        default:
+            break;
+    }
+}
+
+  handleSubmit(event: any) {
+      event.preventDefault();
+      fetch('https://zymptoms.herokuapp.com/api/v1/get_auth_token', {
+          method: 'GET',
+          headers: {
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': 'http://localhost:8000',
+              'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+              'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+              'Authorization': 'Basic ' + Base64.encode(this.state.email + ":" +  this.state.password)
+          }})
+          .then((response) => {
+              if (!response.ok) throw Error(response.statusText);
+              return response.json();
+          })
+          .then((data) => {
+              localStorage.setItem('token', data['token']);
+              // window.location.href = 'Dashboard'
+              this.props.navigation.navigate('Password')
+          })
+          .catch((error) => console.log(error));
+  }
+
+  render () {
     return (
         <View style= { styles.container }>
             <View style={styles.content}>
@@ -11,19 +71,24 @@ export default function Login ({navigation} : { navigation: any})  {
               </View>
                 <Text style={styles.titleText}>Zymptom</Text>
             </View>
+
             <View style={styles.inputContainer}>
               <View style={styles.textContainer}>
-                <TextInput placeholder="Email" style={styles.textInput}></TextInput>
+                <TextInput placeholder="Email" style={styles.textInput} 
+                value={this.state.email ? this.state.email : null} onChange={this.handleChange}></TextInput>
               </View>
               <View style={styles.textContainer}>
-                <TextInput secureTextEntry={true} placeholder="Password" style={styles.textInput}></TextInput>
+                <TextInput secureTextEntry={true} placeholder="Password" style={styles.textInput} 
+                value={this.state.password ? this.state.password : null} onChange={this.handleChange}></TextInput>
               </View>
+
               <TouchableOpacity style={styles.SignInButton} activeOpacity={0.5}
-              onPress={() => navigation.push('Dashboard')}>
+              onPress={() => this.props.navigation.navigate('Dashboard')}>
+              {/* onPress={() => this.handleSubmit}> */}
                   <Text style={styles.SignInText}> Sign In</Text>
               </TouchableOpacity>
               <TouchableOpacity activeOpacity={0.5}
-              onPress={() => navigation.push('Password')}>
+              onPress={() => this.props.navigation.navigate('Password')}>
                   <Text style={styles.ForgotPassText}> Forgot Password? </Text>
               </TouchableOpacity>
             </View>
@@ -38,17 +103,21 @@ export default function Login ({navigation} : { navigation: any})  {
 
                 <Text style={styles.endText}>Don't have an account?</Text>
                 <TouchableOpacity activeOpacity={0.5}
-                onPress={() => navigation.push('Explanation')}>
+                onPress={() => this.props.navigation.navigate('Explanation')}>
                   <Text style={styles.endLink}>Sign Up!</Text>
                 </TouchableOpacity>
             </View>
         </View>
     );
-};
+  };
+}
 
 const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
+    error: {
+      borderColor: 'red'
+    },
     container : {
         flex: height,
         alignItems: 'center',

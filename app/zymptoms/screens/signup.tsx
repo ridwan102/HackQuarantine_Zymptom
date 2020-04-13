@@ -1,71 +1,123 @@
 import React from 'react';
-import { Button, StyleSheet, View, Text, TextInput, Image, TouchableOpacity, Dimensions } from 'react-native';
+import { Button, StyleSheet, View, Text, TextInput, TouchableOpacity, Dimensions } from 'react-native';
 
 //Text Input: https://reactnative.dev/docs/textinput.html
 
-// fetch('https://zymptoms.herokuapp.com/api/v1/create_user', {
-//   method: 'POST',
-//   headers: {
-//     Accept: 'application/json',
-//     'Content-Type' : 'application/json',
-//    },
-//   body: JSON.stringify ({
-//     'email': 'email',
-//     'password': 'password',
-//   }),
-//   }).then((response) => response.json())
-//       .then((responseJson) => {
-//         return responseJson.email;
-//       })
-//       .catch((error) => {
-//         console.error(error);
-//       });
+interface AppState {
+  navigation : any ;
+}
 
+interface AppProps {
+  email : any;
+  password : any;
+  confirm : any;
+}
 
+export default class SignUp extends React.Component <AppState, AppProps>  {
 
-export default function SignUp ({navigation} : { navigation: any})  {
-  
+  constructor(props : any) {
+    super(props);
+    this.state = {
+        email: '',
+        password: '',
+        confirm: '',
+    }
     
-  return (
-    <View style= { styles.container }>
-        <View style={styles.content}>
-          <View style={styles.logo}>
-            <Text style={styles.logoText}> Z </Text>
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event : any) {
+      switch(event.target.name) {
+          case 'email':
+              this.setState({ email: event.target.value });
+              break;
+          case 'password':
+              this.setState({ password: event.target.value });
+              break;
+          case 'confirm':
+              this.setState({ confirm: event.target.value });
+          default:
+              break;
+      }
+  }
+
+  handleSubmit(event : any) {
+      event.preventDefault();
+      if (this.state.password === this.state.confirm) {
+          fetch('https://zymptoms.herokuapp.com/api/v1/create_user', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Access-Control-Allow-Origin': 'http://localhost:8000',
+                  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+                  'Access-Control-Allow-Headers': 'Content-Type'
+              },
+              body: JSON.stringify({
+                  email: this.state.email,
+                  password: this.state.password
+              })})
+              .then((response) => {
+                  if (!response.ok) throw Error(response.statusText);
+                  return response.json();
+              })
+              .then((data) => {
+                  localStorage.setItem('token', data['token']);
+                  // window.location.href = '/dashboard'
+                  this.props.navigation.navigate('Intro')
+              })
+              .catch((error) => 
+                {console.log(error)
+                });
+      }
+  }
+
+  render () {
+    return (
+      <View style= { styles.container }>
+          <View style={styles.content}>
+            <View style={styles.logo}>
+              <Text style={styles.logoText}> Z </Text>
+            </View>
+              <Text style={styles.titleText}>Zymptom</Text>
           </View>
-            <Text style={styles.titleText}>Zymptom</Text>
-        </View>
-        <View style={styles.textContainer}>
-          <View style={styles.textContainer1}>
-            <TextInput placeholder="Email" style={styles.textInput}></TextInput>
+          <View style={styles.textContainer}>
+            <View style={styles.textContainer1}>
+              <TextInput placeholder="Email" style={styles.textInput}
+              value={this.state.email ? this.state.email : null} onChange={this.handleChange}></TextInput>
+            </View>
+            <View style={styles.textContainer1}>
+              <TextInput placeholder="Password" secureTextEntry={true} style={styles.textInput} 
+              value={this.state.password ? this.state.password : null} onChange={this.handleChange} ></TextInput>
+            </View>
+            <View style={styles.textContainer1}>
+              <TextInput placeholder="Confirm Password" secureTextEntry={true} style={styles.textInput} 
+              value={this.state.confirm ? this.state.confirm : null } onChange={this.handleChange}></TextInput>
+            </View>
+              <TouchableOpacity style={styles.SignInButton} activeOpacity={0.5}
+              onPress={() => this.props.navigation.navigate('Intro')}>
+              {/* onPress={() => this.handleSubmit}> */}
+                  <Text style={styles.SignInText}> Sign Up </Text>
+              </TouchableOpacity>
           </View>
-          <View style={styles.textContainer1}>
-            <TextInput placeholder="Password" secureTextEntry={true} style={styles.textInput}></TextInput>
+          <View style={styles.link}>
+                {/* Google, Twitter, and Facebook links below */}
+                {/* <TouchableOpacity>
+                  <Image
+                  source={require('../images/links.png')}
+                  //Image Style
+                  />
+                </TouchableOpacity> */}
+            <Text style={styles.endText}>Already have an account?</Text>
+              <TouchableOpacity activeOpacity={0.5}
+              onPress={() => this.props.navigation.navigate('SignIn')}>
+                <Text style={styles.endLink}>Sign In!</Text>
+              </TouchableOpacity>
           </View>
-          <View style={styles.textContainer1}>
-            <TextInput placeholder="Confirm Password" secureTextEntry={true} style={styles.textInput}></TextInput>
-          </View>
-            <TouchableOpacity style={styles.SignInButton} activeOpacity={0.5}
-            onPress={() => navigation.push('Intro')}>
-                <Text style={styles.SignInText}> Sign Up </Text>
-            </TouchableOpacity>
-        </View>
-        <View style={styles.link}>
-              {/* Google, Twitter, and Facebook links below */}
-              {/* <TouchableOpacity>
-                <Image
-                source={require('../images/links.png')}
-                //Image Style
-                />
-              </TouchableOpacity> */}
-          <Text style={styles.endText}>Already have an account?</Text>
-            <TouchableOpacity activeOpacity={0.5}
-            onPress={() => navigation.push('SignIn')}>
-              <Text style={styles.endLink}>Sign In!</Text>
-            </TouchableOpacity>
-        </View>
-    </View>
-    );
-};
+      </View>
+      );
+  };
+}
 
 const { width, height } = Dimensions.get('window');
 

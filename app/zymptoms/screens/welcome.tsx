@@ -1,37 +1,41 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity, Dimensions } from 'react-native';
 
-export default function Welcome ({navigation} : { navigation: any})  { 
-    return (
-        <View style= { styles.container }>
-            <View style={styles.content}>
-                <View style={styles.logo}>
-                    <Text style={styles.logoText}> Z </Text>
+// ({ navigation }, { navigation: any }) 
+
+export default class Welcome extends React.Component <any> { 
+    render () {
+        return (
+            <View style= { styles.container }>
+                <View style={styles.content}>
+                    <View style={styles.logo}>
+                        <Text style={styles.logoText}> Z </Text>
+                </View>
+                    <Text style={styles.titleText}>Zymptom</Text>
+                </View>
+                <View style={styles.textContainer}>
+                    <Text style={styles.text}>Help combat illnesses in your area!</Text>
+                </View>
+                <View style={styles.buttonContainer}>
+                    <TouchableOpacity style={styles.button} activeOpacity={0.5}
+                    onPress={() => this.props.navigation.navigate('SignIn')}>
+                        <Text style={styles.buttonText}>Login</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button} activeOpacity={0.5}
+                    onPress={() => this.props.navigation.navigate('Explanation')}>
+                        <Text style={styles.buttonText}> Create Account </Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.leftDesign}>
+                    <Image source={require('../images/leftDesign.png')} />
+                </View>
+                {/* <View style={styles.rightDesign}>
+                    <Image source={require('../images/rightDesign.png')} />
+                </View> */}
             </View>
-                <Text style={styles.titleText}>Zymptom</Text>
-            </View>
-            <View style={styles.textContainer}>
-                <Text style={styles.text}>Help combat illnesses in your area!</Text>
-            </View>
-            <View style={styles.buttonContainer}>
-                <TouchableOpacity style={styles.button} activeOpacity={0.5}
-                onPress={() => navigation.push('SignIn')}>
-                    <Text style={styles.buttonText}>Login</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button} activeOpacity={0.5}
-                onPress={() => navigation.push('Explanation')}>
-                    <Text style={styles.buttonText}> Create Account </Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.leftDesign}>
-                <Image source={require('../images/leftDesign.png')} />
-            </View>
-            {/* <View style={styles.rightDesign}>
-                <Image source={require('../images/rightDesign.png')} />
-            </View> */}
-        </View>
-    );
-};
+        );
+    };
+}
 
 const { width, height } = Dimensions.get('window');
 
@@ -99,3 +103,4 @@ const styles = StyleSheet.create({
         flex: height/900
     },
 });
+

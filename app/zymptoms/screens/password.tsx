@@ -2,7 +2,8 @@ import React from 'react';
 import { Dimensions, StyleSheet, View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
 //Text Input Source: https://reactnative.dev/docs/textinput.html
 
-export default function Password ({navigation} : { navigation: any})  {
+export default class Password extends React.Component <any>  {
+  render () {
     return (
         <View style= { styles.container }>
             <View style={styles.content}>
@@ -26,13 +27,14 @@ export default function Password ({navigation} : { navigation: any})  {
             <View style={styles.link}>
                 <Text style={styles.endText}>Return to</Text>
                 <TouchableOpacity activeOpacity={0.5}
-                onPress={() => navigation.push('Welcome')}>
+                onPress={() => this.props.navigation.navigate('Welcome')}>
                   <Text style={styles.endLink}>Welcome Screen</Text>
                 </TouchableOpacity>
             </View>
         </View>
     );
-};
+  };
+}
 
 const { width, height } = Dimensions.get('window');
 
