@@ -1,4 +1,4 @@
-# Zymptom
+# Welcome to Zymptom!
 
 This mobile app allows users to input symptoms daily to help predict the next pandemic. To incentivize users, the more daily symptoms that are input, the longer the daily streak will be and the higher the rewards. Users with daily streaks will be given KureCoins which can then be used to purchase gift-cards for Amazon, the Google Play store and Spotify.
 
